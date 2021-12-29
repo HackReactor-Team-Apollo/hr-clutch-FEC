@@ -44,12 +44,10 @@ class QuestionsAndAnswers extends React.Component {
       )
       .then(res => {
         this.setState(
-          { questionArray: this.state.questionArray.concat(res.data) },
-          () => {console.log(this.state.questionArray, "here's the new question array")}
-        )
+          { questionArray: this.state.questionArray.concat(res.data) })
       })
       .then(() => {
-        console.log("LoadMoreQuestions Fired",this.state.currentPage)
+        //console.log("LoadMoreQuestions Fired",this.state.currentPage)
         this.setState({currentPage:(this.state.currentPage+=1)})
       })
       .catch(err => {

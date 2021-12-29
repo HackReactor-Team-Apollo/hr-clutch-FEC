@@ -3,8 +3,8 @@
 import React from "react";
 import ReviewList from "./ReviewList.jsx";
 import RatingsBreakdown from "./RatingsBreakdown.jsx";
-import MoreReviewsButton from './MoreReviewsButton.jsx';
-import axios from 'axios';
+import MoreReviewsButton from "./MoreReviewsButton.jsx";
+import axios from "axios";
 // let RatingsAndReviews = (props) => {
 //   //console.log("ratings and reviews props:", props);
 
@@ -17,7 +17,8 @@ class RatingsAndReviews extends React.Component {
       reviewCount: 2,
       ratings: {},
       recommendedPercentage: 0,
-    }
+      ratingsCount: 0
+    };
     this.onMoreReviewsClick = this.onMoreReviewsClick.bind(this);
     this.getReviews = this.getReviews.bind(this);
   }
@@ -30,6 +31,7 @@ class RatingsAndReviews extends React.Component {
         that.setState({
           ratings: response.data.ratings,
           recommendedPercentage: response.data.recommended,
+          ratingsCount: response.data.ratings.ratingsCount
         });
       })
       .catch(function (error) {
@@ -43,7 +45,7 @@ class RatingsAndReviews extends React.Component {
         `/reviews?product_id=${this.state.product_id}&count=${this.state.reviewCount}&sort=relevant`
       )
       .then(function (response) {
-        console.log("response Data:", response.data.results);
+        //console.log("response Data:", response.data.results);
         that.setState({
           reviews: response.data.results,
         });
@@ -77,27 +79,27 @@ class RatingsAndReviews extends React.Component {
       });
   }
 
-  componentDidMount () {
-    this.getMetadata()
-    this.getReviews()
+  componentDidMount() {
+    this.getMetadata();
+    this.getReviews();
   }
-  render () {
+  render() {
     return (
       <div className="rateRev">
         rateRev
         <div className="ratings">
           <RatingsBreakdown
             ratings={this.state.ratings}
-            recommended={this.state.recommendedPercentage}
+            recommended={this.state.recommendedPercentage} ratingsCount={this.state.ratingsCount}
           />
         </div>
         <div className="reviews">
           reviews
           <ReviewList reviews={this.state.reviews} />
-          <MoreReviewsButton onClick={this.onMoreReviewsClick}/>
+          <MoreReviewsButton onClick={this.onMoreReviewsClick} />
         </div>
       </div>
     );
   }
-};
+}
 export { RatingsAndReviews };

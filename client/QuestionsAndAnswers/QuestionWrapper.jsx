@@ -22,7 +22,6 @@ questionHelpful() {
 
 loadMoreAnswers() {
   this.setState({answerCount:(this.state.answerCount+=2)})
-  axios.put()
 }
   render () {
     const answerArray=[];
