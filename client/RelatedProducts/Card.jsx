@@ -7,7 +7,7 @@ import axios from 'axios';
 
 export default function Card({ current }) {
   const [styles, setStyles] = useState(false);
-  const [productCategory, setCategory] = useState(false);
+  const [product, setProduct] = useState(false);
 
   useEffect(()=>{
     let isMounted = true;
@@ -15,14 +15,24 @@ export default function Card({ current }) {
       if (isMounted) setStyles(response.data.results[0]);
     });
     axios.get(`/products/${current}`).then((response)=>{
-      if (isMounted) setCategory(response.data.category);
+      if (isMounted) setProduct(response.data);
     });
     return () => { isMounted = false }
   }, [current])
 
   //console.log('asdf', styles, current)
-  if (!styles || !productCategory) return <div>loading...</div>
+  if (!styles || !product) return <div>loading...</div>
 
 
-  return <div> {productCategory} </div>
+  return (<div>
+      <img src = {styles.photos[0].thumbnail_url} />
+      <div>
+      {product.category}
+      {product.name}
+      {!styles.sale_price && <p>{styles.original_price}</p>}
+      {styles.sale_price && <p style="color:red">{styles.sale_price}</p>}
+
+      </div>
+
+    </div>)
 }

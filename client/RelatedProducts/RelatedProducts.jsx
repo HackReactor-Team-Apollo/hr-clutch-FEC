@@ -36,7 +36,7 @@ class RelatedProducts extends React.Component {
           })}
         </div>
         <div className='favoriteProducts'>
-
+          Favorited
         </div>
       </div>
 

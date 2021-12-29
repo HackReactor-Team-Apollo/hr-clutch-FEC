@@ -44211,7 +44211,7 @@ var RelatedProducts = /*#__PURE__*/function (_React$Component) {
         });
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "favoriteProducts"
-      }));
+      }, "Favorited"));
     }
   }]);
 
@@ -44259,8 +44259,8 @@ function Card(_ref) {
 
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState4 = _slicedToArray(_useState3, 2),
-      productCategory = _useState4[0],
-      setCategory = _useState4[1];
+      product = _useState4[0],
+      setProduct = _useState4[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var isMounted = true;
@@ -44268,15 +44268,19 @@ function Card(_ref) {
       if (isMounted) setStyles(response.data.results[0]);
     });
     axios__WEBPACK_IMPORTED_MODULE_1___default().get("/products/".concat(current)).then(function (response) {
-      if (isMounted) setCategory(response.data.category);
+      if (isMounted) setProduct(response.data);
     });
     return function () {
       isMounted = false;
     };
   }, [current]); //console.log('asdf', styles, current)
 
-  if (!styles || !productCategory) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "loading...");
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, " ", productCategory, " ");
+  if (!styles || !product) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "loading...");
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    src: styles.photos[0].thumbnail_url
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, product.category, product.name, !styles.sale_price && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, styles.original_price), styles.sale_price && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+    style: "color:red"
+  }, styles.sale_price)));
 }
 
 /***/ }),
