@@ -32416,9 +32416,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
 /* harmony import */ var _ProductDetails_ProductDetails_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(46);
+<<<<<<< HEAD
 /* harmony import */ var _RelatedProducts_RelatedProducts_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(61);
 /* harmony import */ var _QuestionsAndAnswers_QuestionsAndAnswersMainWrapper_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(63);
 /* harmony import */ var _RatingsAndReviews_RatingsAndReviews_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(76);
+=======
+/* harmony import */ var _RelatedProducts_RelatedProducts_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(48);
+/* harmony import */ var _QuestionsAndAnswers_QuestionsAndAnswersMainWrapper_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(50);
+/* harmony import */ var _RatingsAndReviews_RatingsAndReviews_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(59);
+>>>>>>> For merge
 /* harmony import */ var _ProductDetails_ProductGallery_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(47);
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
@@ -43490,12 +43496,19 @@ var ProductDetails = /*#__PURE__*/function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ProductGallery": () => (/* binding */ ProductGallery)
+<<<<<<< HEAD
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var react_image_gallery_styles_scss_image_gallery_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(48);
 /* harmony import */ var react_image_gallery_styles_css_image_gallery_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(58);
 /* harmony import */ var react_image_gallery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(60);
 /* harmony import */ var react_image_gallery__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_image_gallery__WEBPACK_IMPORTED_MODULE_3__);
+=======
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+Object(function webpackMissingModule() { var e = new Error("Cannot find module 'react-image-gallery/styles/scss/image-gallery.scss'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+Object(function webpackMissingModule() { var e = new Error("Cannot find module 'react-image-gallery/styles/css/image-gallery.css'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+Object(function webpackMissingModule() { var e = new Error("Cannot find module 'react-image-gallery'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -43547,7 +43560,7 @@ var ProductGallery = /*#__PURE__*/function (_React$Component) {
         original: 'https://picsum.photos/id/1019/1000/600/',
         thumbnail: 'https://picsum.photos/id/1019/250/150/'
       }];
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement((react_image_gallery__WEBPACK_IMPORTED_MODULE_3___default()), {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Object(function webpackMissingModule() { var e = new Error("Cannot find module 'react-image-gallery'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), {
         items: images,
         thumbnailPosition: "left",
         showPlayButton: false,
@@ -43568,6 +43581,98 @@ var ProductGallery = /*#__PURE__*/function (_React$Component) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "RelatedProducts": () => (/* binding */ RelatedProducts)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _Card_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(49);
+>>>>>>> For merge
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } Object.defineProperty(subClass, "prototype", { value: Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }), writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+/* Author: Kacy*/
+//Import Library Dependencies
+
+
+
+var RelatedProducts = /*#__PURE__*/function (_React$Component) {
+  _inherits(RelatedProducts, _React$Component);
+
+  var _super = _createSuper(RelatedProducts);
+
+  function RelatedProducts(props) {
+    var _this;
+
+    _classCallCheck(this, RelatedProducts);
+
+    _this = _super.call(this, props);
+    _this.state = {};
+    return _this;
+  }
+
+  _createClass(RelatedProducts, [{
+    key: "render",
+    value: function render() {
+<<<<<<< HEAD
+      var images = [{
+        original: 'https://picsum.photos/id/1018/1000/600/',
+        thumbnail: 'https://picsum.photos/id/1018/250/150/'
+      }, {
+        original: 'https://picsum.photos/id/1015/1000/600/',
+        thumbnail: 'https://picsum.photos/id/1015/250/150/'
+      }, {
+        original: 'https://picsum.photos/id/1019/1000/600/',
+        thumbnail: 'https://picsum.photos/id/1019/250/150/'
+      }];
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement((react_image_gallery__WEBPACK_IMPORTED_MODULE_3___default()), {
+        items: images,
+        thumbnailPosition: "left",
+        showPlayButton: false,
+        lazyLoad: true
+      });
+=======
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "rItemsCompare"
+      }, "rItemsCompare", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "relatedProducts"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Card_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Card_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Card_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Card_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "favoriteProducts"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Card_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Card_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Card_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Card_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
+>>>>>>> For merge
+    }
+  }]);
+
+  return RelatedProducts;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+
+
+/***/ }),
+/* 48 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+<<<<<<< HEAD
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(49);
@@ -43606,7 +43711,18 @@ options.insertStyleElement = (_style_loader_dist_runtime_insertStyleElement_js__
 
 var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_sass_loader_dist_cjs_js_image_gallery_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
 
+=======
+/* harmony export */   "default": () => (/* binding */ Card)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+ //image img
+//information
+//actions
+>>>>>>> For merge
 
+function Card() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, " helo this is card ");
+}
 
 
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_sass_loader_dist_cjs_js_image_gallery_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _css_loader_dist_cjs_js_sass_loader_dist_cjs_js_image_gallery_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _css_loader_dist_cjs_js_sass_loader_dist_cjs_js_image_gallery_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
@@ -43617,6 +43733,18 @@ var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMP
 /***/ ((module) => {
 
 "use strict";
+<<<<<<< HEAD
+=======
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "QuestionsAndAnswers": () => (/* binding */ QuestionsAndAnswers)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _QuestionsAndAnswersHeader_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51);
+/* harmony import */ var _QuestionAnswerBody_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(54);
+/* harmony import */ var _QALoadAndAdd_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(58);
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+>>>>>>> For merge
 
 
 var stylesInDOM = [];
@@ -43676,11 +43804,18 @@ function addElementStyle(obj, options) {
   var api = options.domAPI(options);
   api.update(obj);
 
+<<<<<<< HEAD
   var updater = function updater(newObj) {
     if (newObj) {
       if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap && newObj.supports === obj.supports && newObj.layer === obj.layer) {
         return;
       }
+=======
+/* Author: */
+//Import Library Dependencies
+ //Import Component
+
+>>>>>>> For merge
 
       api.update(obj = newObj);
     } else {
@@ -43691,6 +43826,7 @@ function addElementStyle(obj, options) {
   return updater;
 }
 
+<<<<<<< HEAD
 module.exports = function (list, options) {
   options = options || {};
   list = list || [];
@@ -43721,12 +43857,101 @@ module.exports = function (list, options) {
     lastIdentifiers = newLastIdentifiers;
   };
 };
+=======
+
+var QuestionsAndAnswers = /*#__PURE__*/function (_React$Component) {
+  _inherits(QuestionsAndAnswers, _React$Component);
+
+  var _super = _createSuper(QuestionsAndAnswers);
+
+  function QuestionsAndAnswers(props) {
+    var _this;
+
+    _classCallCheck(this, QuestionsAndAnswers);
+
+    _this = _super.call(this, props);
+    _this.state = {//Data needed from api
+      //All related questions and answers
+      //Data that may be sent to API
+      //New Question
+      //New Answer (and associated question id)
+      //report/helpful tally (and associated Q or A id)
+    };
+    return _this;
+  } //Functional discussion
+
+  /* HELPER FUNCTIONS */
+  //OnChange - Utilized to update question/answer text boxes
+
+
+  _createClass(QuestionsAndAnswers, [{
+    key: "onChange",
+    value: function onChange(e) {//Event handler, use e.target.value to update state
+    }
+  }, {
+    key: "loadMoreQuestions",
+    value: function loadMoreQuestions() {//Populate 2 more question and answer elements
+      //Call on load?
+    }
+  }, {
+    key: "submitAnswer",
+    value: function submitAnswer() {//pass answer input value to axios post request, then update question data
+    }
+  }, {
+    key: "submitQuestion",
+    value: function submitQuestion() {//pass question input value to axios post request, then update question data
+    }
+    /****** QA Helpful/Report Functions ******/
+    //QuestionHelpful
+    //QuestionReport
+    //AnswerHelpful
+    //AnswerReport
+
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {//Update state with api data
+      //Render some number of QA elements
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "QABodyWrapper"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_QuestionsAndAnswersHeader_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_QuestionAnswerBody_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_QALoadAndAdd_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+    }
+  }]);
+
+  return QuestionsAndAnswers;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+
+/* placeholder
+<div className='questAns'>
+  questAns
+  <div className='quesTop'>quesTop</div>
+  <div className='quesMid'>quesMid</div>
+  <div className='quesBot'>quesBot</div>
+</div>
+
+*/
+>>>>>>> For merge
 
 /***/ }),
 /* 50 */
 /***/ ((module) => {
 
 "use strict";
+<<<<<<< HEAD
+=======
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _assets_QASearchButtonIcon_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52);
+/* harmony import */ var _assets_QASearchClearIcon_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(53);
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+>>>>>>> For merge
 
 
 /* istanbul ignore next  */
@@ -43770,6 +43995,7 @@ function apply(styleElement, options, obj) {
   /* istanbul ignore if  */
 
 
+<<<<<<< HEAD
   options.styleTagTransform(css, styleElement, options.options);
 }
 
@@ -43782,8 +44008,20 @@ function removeStyleElement(styleElement) {
   styleElement.parentNode.removeChild(styleElement);
 }
 /* istanbul ignore next  */
+=======
+var QuestionsAndAnswersHeader = /*#__PURE__*/function (_React$Component) {
+  _inherits(QuestionsAndAnswersHeader, _React$Component);
+
+  var _super = _createSuper(QuestionsAndAnswersHeader);
+
+  function QuestionsAndAnswersHeader(props) {
+    var _this;
+
+    _classCallCheck(this, QuestionsAndAnswersHeader);
+>>>>>>> For merge
 
 
+<<<<<<< HEAD
 function domAPI(options) {
   var styleElement = options.insertStyleElement(options);
   return {
@@ -43797,12 +44035,75 @@ function domAPI(options) {
 }
 
 module.exports = domAPI;
+=======
+  _createClass(QuestionsAndAnswersHeader, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
+        className: "QAHeader"
+      }, " Questions and Answers "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "QASearchForm"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+        className: "QASearchButton",
+        type: "submit"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+        src: _assets_QASearchButtonIcon_png__WEBPACK_IMPORTED_MODULE_1__["default"]
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+        type: "text",
+        placeholder: "Search Questions",
+        className: "QASearchField"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+        className: "QASearchClear",
+        type: "reset"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+        src: _assets_QASearchClearIcon_png__WEBPACK_IMPORTED_MODULE_2__["default"]
+      }))));
+    }
+  }]);
+
+  return QuestionsAndAnswersHeader;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (QuestionsAndAnswersHeader);
+>>>>>>> For merge
 
 /***/ }),
 /* 51 */
 /***/ ((module) => {
 
 "use strict";
+<<<<<<< HEAD
+=======
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "c6c509b55945e48f95b32ff4108c8a7b.png");
+
+/***/ }),
+/* 53 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "85fbf6097e7324a4d4b4917577749173.png");
+
+/***/ }),
+/* 54 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _QuestionWrapper_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(55);
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+>>>>>>> For merge
 
 
 var memo = {};
@@ -44155,6 +44456,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+<<<<<<< HEAD
 /* Author: Kacy*/
 //Import Library Dependencies
 
@@ -44169,12 +44471,34 @@ var RelatedProducts = /*#__PURE__*/function (_React$Component) {
     var _this;
 
     _classCallCheck(this, RelatedProducts);
+=======
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+var QuestionAnswerBody = /*#__PURE__*/function (_React$Component) {
+  _inherits(QuestionAnswerBody, _React$Component);
+
+  var _super = _createSuper(QuestionAnswerBody);
+
+  function QuestionAnswerBody(props) {
+    var _this;
+
+    _classCallCheck(this, QuestionAnswerBody);
+>>>>>>> For merge
 
     _this = _super.call(this, props);
-    _this.state = {};
-    return _this;
-  }
 
+    _defineProperty(_assertThisInitialized(_this), "populateTwoQuestions", void 0);
+
+    _this.state = {
+      RenderedQuestions: []
+    };
+    return _this;
+  } //Function to map out elements
+
+<<<<<<< HEAD
   _createClass(RelatedProducts, [{
     key: "render",
     value: function render() {
@@ -44210,6 +44534,24 @@ __webpack_require__.r(__webpack_exports__);
 function Card() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, " helo this is card ");
 }
+=======
+
+  _createClass(QuestionAnswerBody, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {//populate
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_QuestionWrapper_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+    }
+  }]);
+
+  return QuestionAnswerBody;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (QuestionAnswerBody);
+>>>>>>> For merge
 
 /***/ }),
 /* 63 */
@@ -44218,14 +44560,18 @@ function Card() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "QuestionsAndAnswers": () => (/* binding */ QuestionsAndAnswers)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+<<<<<<< HEAD
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(15);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _QuestionsAndAnswersHeader_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(64);
 /* harmony import */ var _QuestionAnswerBody_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(67);
 /* harmony import */ var _QuestionLoadAndAdd_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(75);
+=======
+/* harmony import */ var _AnswersBody_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(56);
+>>>>>>> For merge
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -44248,26 +44594,29 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+<<<<<<< HEAD
 /* Author: */
 //Import Library Dependencies
 
  //Import Component
 
+=======
+>>>>>>> For merge
 
 
 
+var QuestionWrapper = /*#__PURE__*/function (_React$Component) {
+  _inherits(QuestionWrapper, _React$Component);
 
-var QuestionsAndAnswers = /*#__PURE__*/function (_React$Component) {
-  _inherits(QuestionsAndAnswers, _React$Component);
+  var _super = _createSuper(QuestionWrapper);
 
-  var _super = _createSuper(QuestionsAndAnswers);
-
-  function QuestionsAndAnswers(props) {
+  function QuestionWrapper(props) {
     var _this;
 
-    _classCallCheck(this, QuestionsAndAnswers);
+    _classCallCheck(this, QuestionWrapper);
 
     _this = _super.call(this, props);
+<<<<<<< HEAD
     _this.state = {
       productID: _this.props.product_id,
       currentPage: 1,
@@ -44333,10 +44682,18 @@ var QuestionsAndAnswers = /*#__PURE__*/function (_React$Component) {
     //AnswerReport
 
   }, {
+=======
+    _this.state = {};
+    return _this;
+  }
+
+  _createClass(QuestionWrapper, [{
+>>>>>>> For merge
     key: "render",
     value: function render() {
       //console.log(this.state.questionArray, "console here")
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+<<<<<<< HEAD
         className: "QABodyWrapper"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_QuestionsAndAnswersHeader_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_QuestionAnswerBody_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
         questionArray: this.state.questionArray
@@ -44344,22 +44701,31 @@ var QuestionsAndAnswers = /*#__PURE__*/function (_React$Component) {
         loadMoreQuestions: this.loadMoreQuestions,
         submitQuestion: this.submitQuestion
       }));
+=======
+        className: "QAElementWrapper"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "QuesElementWrapper"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "QuestionText"
+      }, "Q: Does it fly?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "QAQHRWrapper"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "QAQHelpful"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Helpful?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "QAQHelpfulTxt"
+      }, "Yes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "QAQHelpfulTxt"
+      }, "(2)")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "QAQReport"
+      }, " Report Question?"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AnswersBody_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+>>>>>>> For merge
     }
   }]);
 
-  return QuestionsAndAnswers;
+  return QuestionWrapper;
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
-
-/* placeholder
-<div className='questAns'>
-  questAns
-  <div className='quesTop'>quesTop</div>
-  <div className='quesMid'>quesMid</div>
-  <div className='quesBot'>quesBot</div>
-</div>
-
-*/
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (QuestionWrapper);
 
 /***/ }),
 /* 64 */
@@ -44371,8 +44737,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+<<<<<<< HEAD
 /* harmony import */ var _assets_QASearchButtonIcon_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(65);
 /* harmony import */ var _assets_QAExitIcon_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(66);
+=======
+/* harmony import */ var _AnswerWrapper_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(57);
+>>>>>>> For merge
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -44398,25 +44768,25 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+var AnswerBody = /*#__PURE__*/function (_React$Component) {
+  _inherits(AnswerBody, _React$Component);
 
-var QuestionsAndAnswersHeader = /*#__PURE__*/function (_React$Component) {
-  _inherits(QuestionsAndAnswersHeader, _React$Component);
+  var _super = _createSuper(AnswerBody);
 
-  var _super = _createSuper(QuestionsAndAnswersHeader);
-
-  function QuestionsAndAnswersHeader(props) {
+  function AnswerBody(props) {
     var _this;
 
-    _classCallCheck(this, QuestionsAndAnswersHeader);
+    _classCallCheck(this, AnswerBody);
 
     _this = _super.call(this, props);
     _this.state = {};
     return _this;
   }
 
-  _createClass(QuestionsAndAnswersHeader, [{
+  _createClass(AnswerBody, [{
     key: "render",
     value: function render() {
+<<<<<<< HEAD
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
         className: "QAHeader"
       }, " Questions and Answers "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -44436,15 +44806,19 @@ var QuestionsAndAnswersHeader = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
         src: _assets_QAExitIcon_png__WEBPACK_IMPORTED_MODULE_2__["default"]
       }))));
+=======
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AnswerWrapper_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+>>>>>>> For merge
     }
   }]);
 
-  return QuestionsAndAnswersHeader;
+  return AnswerBody;
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (QuestionsAndAnswersHeader);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AnswerBody);
 
 /***/ }),
+<<<<<<< HEAD
 /* 65 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -45083,6 +45457,9 @@ var DisableScroll = /** @class */ (function () {
 
 /***/ }),
 /* 75 */
+=======
+/* 57 */
+>>>>>>> For merge
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -45115,6 +45492,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+<<<<<<< HEAD
 var QuestionLoadAndAdd = /*#__PURE__*/function (_React$Component) {
   _inherits(QuestionLoadAndAdd, _React$Component);
 
@@ -45124,12 +45502,24 @@ var QuestionLoadAndAdd = /*#__PURE__*/function (_React$Component) {
     var _this;
 
     _classCallCheck(this, QuestionLoadAndAdd);
+=======
+var AnswerWrapper = /*#__PURE__*/function (_React$Component) {
+  _inherits(AnswerWrapper, _React$Component);
+
+  var _super = _createSuper(AnswerWrapper);
+
+  function AnswerWrapper(props) {
+    var _this;
+
+    _classCallCheck(this, AnswerWrapper);
+>>>>>>> For merge
 
     _this = _super.call(this, props);
     _this.state = {};
     return _this;
   }
 
+<<<<<<< HEAD
   _createClass(QuestionLoadAndAdd, [{
     key: "render",
     value: function render() {
@@ -45151,6 +45541,36 @@ var QuestionLoadAndAdd = /*#__PURE__*/function (_React$Component) {
 
 /***/ }),
 /* 76 */
+=======
+  _createClass(AnswerWrapper, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "AnsElementWrapper"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "AnswerText"
+      }, "A: Yeah it soars"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "QAAHRWrapper"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "QAAHelpful"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Helpful?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "QAAHelpfulTxt"
+      }, "Yes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "QAAHelpfulTxt"
+      }, "(2)")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "QAAReport"
+      }, " Report answer?")));
+    }
+  }]);
+
+  return AnswerWrapper;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AnswerWrapper);
+
+/***/ }),
+/* 58 */
+>>>>>>> For merge
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -45159,11 +45579,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "RatingsAndReviews": () => (/* binding */ RatingsAndReviews)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+<<<<<<< HEAD
 /* harmony import */ var _ReviewList_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(77);
 /* harmony import */ var _RatingsBreakdown_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(80);
 /* harmony import */ var _MoreReviewsButton_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(81);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(15);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+=======
+>>>>>>> For merge
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -45190,7 +45613,10 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 //Import Library Dependencies
 
 
+var QALoadAndAdd = /*#__PURE__*/function (_React$Component) {
+  _inherits(QALoadAndAdd, _React$Component);
 
+<<<<<<< HEAD
 
  // let RatingsAndReviews = (props) => {
 //   //console.log("ratings and reviews props:", props);
@@ -45204,6 +45630,14 @@ var RatingsAndReviews = /*#__PURE__*/function (_React$Component) {
     var _this;
 
     _classCallCheck(this, RatingsAndReviews);
+=======
+  var _super = _createSuper(QALoadAndAdd);
+
+  function QALoadAndAdd(props) {
+    var _this;
+
+    _classCallCheck(this, QALoadAndAdd);
+>>>>>>> For merge
 
     _this = _super.call(this, props);
     _this.state = {
@@ -45218,6 +45652,7 @@ var RatingsAndReviews = /*#__PURE__*/function (_React$Component) {
     return _this;
   }
 
+<<<<<<< HEAD
   _createClass(RatingsAndReviews, [{
     key: "getMetadata",
     value: function getMetadata() {
@@ -45304,6 +45739,64 @@ var RatingsAndReviews = /*#__PURE__*/function (_React$Component) {
 
 /***/ }),
 /* 77 */
+=======
+  _createClass(QALoadAndAdd, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "QALoadAndAddWrapper"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "QALoadMore"
+      }, " Load More "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "QAAddQuestion"
+      }, " Add New Question "));
+    }
+  }]);
+
+  return QALoadAndAdd;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (QALoadAndAdd);
+
+/***/ }),
+/* 59 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "RatingsAndReviews": () => (/* binding */ RatingsAndReviews)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _ReviewList_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(60);
+/* harmony import */ var _RatingsBreakdown_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(63);
+/* Author: */
+//Import Library Dependencies
+
+
+
+
+var RatingsAndReviews = function RatingsAndReviews(props) {
+  console.log("ratings and reviews props:", props);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "rateRev"
+  }, "rateRev", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "ratings"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RatingsBreakdown_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    ratings: props.ratings,
+    recommended: props.recommended
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "reviews"
+  }, "reviews", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReviewList_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    reviews: props.reviews
+  })));
+};
+
+
+
+/***/ }),
+/* 60 */
+>>>>>>> For merge
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -45312,7 +45805,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+<<<<<<< HEAD
 /* harmony import */ var _ReviewTile_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(78);
+=======
+/* harmony import */ var _ReviewTile_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(61);
+>>>>>>> For merge
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -45368,7 +45865,11 @@ var ReviewList = /*#__PURE__*/function (_React$Component) {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ReviewList);
 
 /***/ }),
+<<<<<<< HEAD
 /* 78 */
+=======
+/* 61 */
+>>>>>>> For merge
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -45377,7 +45878,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+<<<<<<< HEAD
 /* harmony import */ var _ReviewImages_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(79);
+=======
+/* harmony import */ var _ReviewImages_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62);
+>>>>>>> For merge
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -45424,7 +45929,11 @@ var ReviewTile = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, this.props.reviews.map(function (review) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           key: review.review_id
+<<<<<<< HEAD
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "User: ", review.reviewer_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Date: ", review.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Summary: ", review.summary), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Body: ", review.body), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Helpful? Yes(", review.helpfulness, ")"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Response:", review.response), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReviewImages_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+=======
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, review.summary), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, review.body), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReviewImages_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+>>>>>>> For merge
           images: review.photos
         }));
       }));
@@ -45435,6 +45944,33 @@ var ReviewTile = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ReviewTile);
+<<<<<<< HEAD
+=======
+
+/***/ }),
+/* 62 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+
+
+var ReviewImages = function ReviewImages(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, props.images.map(function (image) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+      className: "reviewImage",
+      src: image.url,
+      key: image.id
+    });
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ReviewImages);
+>>>>>>> For merge
 
 /***/ }),
 /* 79 */
@@ -45520,6 +46056,7 @@ var RatingsBreakdown = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RatingsBreakdown);
+<<<<<<< HEAD
 
 /***/ }),
 /* 81 */
@@ -45542,6 +46079,8 @@ var MoreReviewsButton = function MoreReviewsButton(props) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MoreReviewsButton);
+=======
+>>>>>>> For merge
 
 /***/ })
 /******/ 	]);
