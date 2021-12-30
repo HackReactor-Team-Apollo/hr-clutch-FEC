@@ -5,7 +5,7 @@ import axios from 'axios';
 //information
 //actions
 
-export default function Card({ current }) {
+export default function Card({ current, onRelatedProductClick }) {
   const [styles, setStyles] = useState(false);
   const [product, setProduct] = useState(false);
 
@@ -24,13 +24,13 @@ export default function Card({ current }) {
   if (!styles || !product) return <div>loading...</div>
 
 
-  return (<div>
+  return (<div onClick = {()=>onRelatedProductClick(current)}>
       <img src = {styles.photos[0].thumbnail_url} />
       <div>
       {product.category}
       {product.name}
       {!styles.sale_price && <p>{styles.original_price}</p>}
-      {styles.sale_price && <p style="color:red">{styles.sale_price}</p>}
+      {styles.sale_price && <p style="color:red">{styles.sale_price}<s>{styles.original_price}</s></p>}
 
       </div>
 

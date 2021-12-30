@@ -31,7 +31,7 @@ class RelatedProducts extends React.Component {
         <div className='relatedProducts'>
           {this.state.related.map((currentRelated, i) => {
             return (
-              <Card key = {i} current = {currentRelated} />
+              <Card key = {i} current = {currentRelated} onRelatedProductClick = {this.props.onRelatedProductClick}/>
             );
           })}
         </div>

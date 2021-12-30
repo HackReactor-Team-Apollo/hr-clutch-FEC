@@ -32470,10 +32470,23 @@ var App = /*#__PURE__*/function (_React$Component) {
       product_id: 38204 //DUMMY VALUE, gets passed to all components
 
     };
+    _this.onRelatedProductClick = _this.onRelatedProductClick.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(App, [{
+    key: "onRelatedProductClick",
+    value: function onRelatedProductClick(current) {
+      this.setState({
+        product_id: current
+      });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.onRelatedProductClick;
+    }
+  }, {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -32490,7 +32503,8 @@ var App = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ProductDetails_ProductDetails_jsx__WEBPACK_IMPORTED_MODULE_4__.ProductDetails, {
         product_id: this.state.product_id
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RelatedProducts_RelatedProducts_jsx__WEBPACK_IMPORTED_MODULE_5__.RelatedProducts, {
-        product_id: this.state.product_id
+        product_id: this.state.product_id,
+        onRelatedProductClick: this.onRelatedProductClick
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_QuestionsAndAnswers_QuestionsAndAnswersMainWrapper_jsx__WEBPACK_IMPORTED_MODULE_6__.QuestionsAndAnswers, {
         product_id: this.state.product_id
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RatingsAndReviews_RatingsAndReviews_jsx__WEBPACK_IMPORTED_MODULE_7__.RatingsAndReviews, {
@@ -44200,6 +44214,8 @@ var RelatedProducts = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "rItemsCompare"
       }, "rItemsCompare", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -44207,7 +44223,8 @@ var RelatedProducts = /*#__PURE__*/function (_React$Component) {
       }, this.state.related.map(function (currentRelated, i) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Card_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: i,
-          current: currentRelated
+          current: currentRelated,
+          onRelatedProductClick: _this2.props.onRelatedProductClick
         });
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "favoriteProducts"
@@ -44250,7 +44267,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 //actions
 
 function Card(_ref) {
-  var current = _ref.current;
+  var current = _ref.current,
+      onRelatedProductClick = _ref.onRelatedProductClick;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -44276,11 +44294,15 @@ function Card(_ref) {
   }, [current]); //console.log('asdf', styles, current)
 
   if (!styles || !product) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "loading...");
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    onClick: function onClick() {
+      return onRelatedProductClick(current);
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: styles.photos[0].thumbnail_url
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, product.category, product.name, !styles.sale_price && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, styles.original_price), styles.sale_price && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
     style: "color:red"
-  }, styles.sale_price)));
+  }, styles.sale_price, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("s", null, styles.original_price))));
 }
 
 /***/ }),
