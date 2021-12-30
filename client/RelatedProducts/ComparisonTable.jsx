@@ -46,7 +46,7 @@ export default function ComparisonTable({ currentProduct, product }) {
             featureOfRelated = true;
           }
           return (
-            <tr>
+            <tr key = {i}>
               <td>{featureOfTopProduct && <>&#10004;</>}</td>
               <td>{currentFeature}</td>
               <td>{featureOfRelated && <>&#10004;</>}</td>

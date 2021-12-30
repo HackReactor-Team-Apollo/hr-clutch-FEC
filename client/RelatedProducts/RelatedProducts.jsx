@@ -5,6 +5,15 @@ import Card from './Card.jsx'
 import axios from 'axios';
 import ComparisonTable from './ComparisonTable.jsx'
 import AddToCompare from './AddToCompare.jsx';
+import {
+  CarouselProvider,
+  Slider,
+  Slide,
+  ButtonBack,
+  ButtonNext,
+  DotGroup
+} from "pure-react-carousel";
+import "pure-react-carousel/dist/react-carousel.es.css";
 
 class RelatedProducts extends React.Component {
   constructor(props) {
@@ -26,7 +35,7 @@ class RelatedProducts extends React.Component {
   }
   changeComparison(product) {
     this.setState({ showComparison: !this.state.showComparison })
-    this.setState({ currentRelatedComparison: product})
+    this.setState({ currentRelatedComparison: product })
   }
   componentDidMount() {
     this.getRelated()
@@ -38,18 +47,43 @@ class RelatedProducts extends React.Component {
   }
 
   render() {
+    const {related} = this.state;
+
+
     return (
       <div className='rItemsCompare'>
         rItemsCompare
         <div className='relatedProducts'>
-          {this.state.related.map((currentRelated, i) => {
-            return (
+        <CarouselProvider
+          visibleSlides={5}
+          naturalSlideWidth={245}
+          naturalSlideHeight={500}
+          totalSlides={related.length}
+          isIntrinsicHeight={true}
+          dragEnabled={false}
+        >
+          <div className='carousel-container'>
+            <div className='carousel-gradient'>
+              <Slider>
+                {related.map((currentRelated, i) => {
+                  return (
+                    <Slide>
+                      <Card key={i} current={currentRelated} onRelatedProductClick={this.props.onRelatedProductClick} Action={AddToCompare} changeComparison={this.changeComparison} />
+                    </Slide>
+                  );
+                })}
+              </Slider>
+              {related.length > 5 &&
               <>
-                <Card key={i} current={currentRelated} onRelatedProductClick={this.props.onRelatedProductClick} Action={AddToCompare} changeComparison={this.changeComparison} />
-              </>
-            );
-          })}
-          <div>{this.state.showComparison && <ComparisonTable currentProduct={this.props.product_id} product={this.state.currentRelatedComparison}/>}</div>
+                <ButtonBack className="carousel-button-back">&lsaquo;</ButtonBack>
+                <ButtonNext className="carousel-button-next">&rsaquo;</ButtonNext>
+                {/* <DotGroup className="carousel-dots" /> */}
+              </>}
+            </div>
+          </div>
+          </CarouselProvider>
+
+          <div>{this.state.showComparison && <ComparisonTable currentProduct={this.props.product_id} product={this.state.currentRelatedComparison} />}</div>
         </div>
         <div className='favoriteProducts'>
           Favorited
