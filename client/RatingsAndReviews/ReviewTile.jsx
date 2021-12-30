@@ -26,7 +26,7 @@ class ReviewTile extends React.Component {
   }
   showResponse(review) {
     if (review.response !== null) {
-      return  <div>Response:{this.props.review.response}</div>;
+      return  <div>Response from seller:{this.props.review.response}</div>;
     }
   }
   markHelpful() {
