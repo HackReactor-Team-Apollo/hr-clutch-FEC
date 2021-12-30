@@ -1,11 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
-//image img
-//information
-//actions
 
-export default function Card({ current, onRelatedProductClick }) {
+export default function Card({ current, onRelatedProductClick, Action, changeComparison }) {
   const [styles, setStyles] = useState(false);
   const [product, setProduct] = useState(false);
 
@@ -24,13 +21,14 @@ export default function Card({ current, onRelatedProductClick }) {
   if (!styles || !product) return <div>loading...</div>
 
 
-  return (<div onClick = {()=>onRelatedProductClick(current)}>
-      <img src = {styles.photos[0].thumbnail_url} />
+  return (<div>
+      <img onClick = {()=>onRelatedProductClick(current)} src = {styles.photos[0].thumbnail_url}/>
+      <Action changeComparison={changeComparison} product={product}/>
       <div>
       {product.category}
       {product.name}
       {!styles.sale_price && <p>{styles.original_price}</p>}
-      {styles.sale_price && <p style="color:red">{styles.sale_price}<s>{styles.original_price}</s></p>}
+      {styles.sale_price && <p style={{color:'red'}}>{styles.sale_price}<s style={{color:'black'}}>{styles.original_price}</s></p>}
 
       </div>
 
