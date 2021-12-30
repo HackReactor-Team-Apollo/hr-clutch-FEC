@@ -9,7 +9,9 @@ class ReviewList extends React.Component {
   render() {
     return (
       <>
-        <ReviewTile reviews={this.props.reviews} />
+        {this.props.reviews.map((review) => (
+          <ReviewTile review={review} getRevs={this.props.getRevs}/>
+        ))}
       </>
     );
   }

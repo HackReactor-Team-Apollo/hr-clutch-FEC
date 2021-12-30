@@ -21,6 +21,7 @@ class RatingsAndReviews extends React.Component {
     };
     this.onMoreReviewsClick = this.onMoreReviewsClick.bind(this);
     this.getReviews = this.getReviews.bind(this);
+    this.getMetadata = this.getMetadata.bind(this);
   }
   getMetadata() {
     let that = this;
@@ -42,7 +43,7 @@ class RatingsAndReviews extends React.Component {
     let that = this;
     axios
       .get(
-        `/reviews?product_id=${this.state.product_id}&count=${this.state.reviewCount}&sort=relevant`
+        `/reviews?product_id=${this.state.product_id}&count=${this.state.reviewCount}&sort=helpful`
       )
       .then(function (response) {
         //console.log("response Data:", response.data.results);
@@ -95,7 +96,7 @@ class RatingsAndReviews extends React.Component {
         </div>
         <div className="reviews">
           reviews
-          <ReviewList reviews={this.state.reviews} />
+          <ReviewList reviews={this.state.reviews} getRevs={this.getReviews}/>
           <MoreReviewsButton onClick={this.onMoreReviewsClick} />
         </div>
       </div>

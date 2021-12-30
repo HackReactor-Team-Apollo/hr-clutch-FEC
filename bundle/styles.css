@@ -172,7 +172,20 @@
   height: 100px;
   width: 100px
 }
-
+.helpfulReview:hover {
+  cursor: pointer;
+  color: lightskyblue
+}
+.helpfulReview {
+  text-decoration: underline;
+}
+.reportReview:hover {
+  cursor: pointer;
+  color: lightskyblue
+}
+.reportReview {
+  text-decoration: underline;
+}
 /*###########################~~FOOTER~~################################*/
 .footer {
   background-color: rgb(236, 252, 5);
