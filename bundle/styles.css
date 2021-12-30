@@ -187,14 +187,6 @@
   /* overflow: hidden; */
 }
 
-/* .carousel-cell {
-  position: relative;
-  height: 245px;
-
-}
-.carousel-cell:active {
-  cursor: grabbing;
-} */
 .carousel-gradient {
   height: 100%;
   background: linear-gradient(135deg, #00c900, #0099ff);
@@ -210,10 +202,10 @@
   border-radius: 64px;
   border: none;
   font-size: 32px;
+  &[disabled] {
+    background: none;
+  }
 }
-/* .carousel-button-back[disabled] {
-  background: none;
-} */
 .carousel-button-next {
   position: absolute;
   top: 50%;
@@ -224,34 +216,21 @@
   border-radius: 64px;
   border: none;
   font-size: 32px;
-}
-/* .carousel-button-next[disabled] {
-  background: none;
-} */
-
-.carousel-dots {
-  position: absolute;
-  right: 24px + 80px;
-  bottom: 16px;
-  transform: translateY(-50%);
-}
-
-.carousel__dot {
-  background: #737373;
-  border: none;
-  height: 2px;
-  width: 16px;
-
-  /* & + & {
-    margin-left: 4px;
+  &[disabled] {
+    background: none;
   }
-
-  &--selected {
-    height: 4px;
-    background: #f3f3f3;
-  } */
 }
-
+.circle {
+  margin: 10px;
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  background:linear-gradient(135deg, #0099ff, #00c900);
+  border: 1px solid #ccc;
+  color: #000;
+  text-align: center;
+  font: 32px Arial, sans-serif;
+}
 /*###########################~~RATINGS AND REVIEWS~~################################*/
 .rateRev {
   background-color: rgb(243, 8, 192);
