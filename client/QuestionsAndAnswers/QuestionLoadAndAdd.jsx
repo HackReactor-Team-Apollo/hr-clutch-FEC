@@ -12,7 +12,7 @@ class QuestionLoadAndAdd extends React.Component {
   render () {
     return (
       <div className='QALoadAndAddWrapper'>
-        <button className='QALoadMore' onClick={this.props.loadMoreQuestions}> Load More </button>
+        <button className='QALoadMore' onClick={this.props.loadMoreQuestions}> Load More Questions</button>
         <button className='QAAddQuestion'> Add New Question </button>
       </div>
     )

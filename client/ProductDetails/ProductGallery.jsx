@@ -2,6 +2,7 @@ import React from 'react'
 import 'react-image-gallery/styles/scss/image-gallery.scss';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import ImageGallery from 'react-image-gallery';
+import {onLoadImages} from './OnLoadData.js'
 
 
 
@@ -22,7 +23,7 @@ class ProductGallery extends React.Component {
       },
     ];
     return <ImageGallery
-    items={images}
+    items={onLoadImages}
     thumbnailPosition="left"
     showPlayButton={false}
     lazyLoad={true}

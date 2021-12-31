@@ -17,7 +17,7 @@ const QAModal = () => {
         <div className='QAModalOverlay'>
           <div className='QAModalHeader'>
             <div>Answer Form</div>
-            <button className='QAModalExit'>
+            <button className='QAModalExit' onClick={close}>
               <img src={QAExitIcon} />
             </button>
           </div>
