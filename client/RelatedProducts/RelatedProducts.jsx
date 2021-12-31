@@ -56,14 +56,11 @@ class RelatedProducts extends React.Component {
   }
   removeFromFavorites(product) {
     let newArr = [];
-    console.log(product.id)
-    console.log(this.state.favorites)
     for (let i = 0; i < this.state.favorites.length; i++) {
       if (this.state.favorites[i] !== product.id) {
         newArr.push(this.state.favorites[i])
       }
     }
-    console.log(newArr)
     this.setState({ favorites: newArr });
   }
 
