@@ -61,6 +61,7 @@ class RelatedProducts extends React.Component {
         newArr.push(this.state.favorites[i])
       }
     }
+
     this.setState({ favorites: newArr });
   }
 
@@ -72,6 +73,7 @@ class RelatedProducts extends React.Component {
       <div className='rItemsCompare'>
         rItemsCompare
         <div className='relatedProducts'>
+          Related Products
           <CarouselProvider
             visibleSlides={5}
             naturalSlideWidth={245}
@@ -102,6 +104,7 @@ class RelatedProducts extends React.Component {
           </CarouselProvider>
         </div>
         <div className='favoriteProducts'>
+          Your Outfit
           <CarouselProvider
             visibleSlides={4}
             naturalSlideWidth={245}

@@ -44292,7 +44292,7 @@ var RelatedProducts = /*#__PURE__*/function (_React$Component) {
         className: "rItemsCompare"
       }, "rItemsCompare", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "relatedProducts"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(pure_react_carousel__WEBPACK_IMPORTED_MODULE_6__.CarouselProvider, {
+      }, "Related Products", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(pure_react_carousel__WEBPACK_IMPORTED_MODULE_6__.CarouselProvider, {
         visibleSlides: 5,
         naturalSlideWidth: 245,
         naturalSlideHeight: 500,
@@ -44320,7 +44320,7 @@ var RelatedProducts = /*#__PURE__*/function (_React$Component) {
         product: this.state.currentRelatedComparison
       })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "favoriteProducts"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(pure_react_carousel__WEBPACK_IMPORTED_MODULE_6__.CarouselProvider, {
+      }, "Your Outfit", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(pure_react_carousel__WEBPACK_IMPORTED_MODULE_6__.CarouselProvider, {
         visibleSlides: 4,
         naturalSlideWidth: 245,
         naturalSlideHeight: 500,
@@ -46210,7 +46210,7 @@ function ComparisonTable(_ref) {
     }
   }
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, topProduct.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, product.name)), featuresArr.map(function (currentFeature, i) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Comparing"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, topProduct.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, product.name)), featuresArr.map(function (currentFeature, i) {
     var featureOfTopProduct = false;
     var featureOfRelated = false;
 
@@ -46225,7 +46225,7 @@ function ComparisonTable(_ref) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", {
       key: i
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, featureOfTopProduct && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, "\u2714")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, currentFeature), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", null, featureOfRelated && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, "\u2714")));
-  })));
+  }))));
 }
 ;
 
