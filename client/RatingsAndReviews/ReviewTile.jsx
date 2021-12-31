@@ -6,6 +6,7 @@ class ReviewTile extends React.Component {
     super(props);
     this.state = {
       review_id: this.props.review.review_id,
+      marked: false
     };
   }
   convertTime(milliseconds) {
@@ -31,14 +32,17 @@ class ReviewTile extends React.Component {
   }
   markHelpful() {
     let that = this;
-    axios.put("/reviews/:reviewId/helpful", {review_id: this.state.review_id})
-      .then(function(response) {
-        console.log('this worked:', response);
-        that.props.getRevs();
-      })
-      .catch(function(error) {
-        console.log('PUT Error:', error);
-      })
+    if (this.state.marked === false) {
+      axios.put("/reviews/:reviewId/helpful", {review_id: this.state.review_id})
+        .then(function(response) {
+          console.log('this worked:', response);
+          that.setState({marked: true})
+          that.props.getRevs();
+        })
+        .catch(function(error) {
+          console.log('PUT Error:', error);
+        })
+    }
   }
   reportReview() {
     let that = this;

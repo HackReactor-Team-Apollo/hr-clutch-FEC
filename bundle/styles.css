@@ -261,8 +261,8 @@
 }
 
 .reviewImage {
-  height: 100px;
-  width: 100px
+  max-height: 100px;
+  max-width: 100px
 }
 
 .helpfulReview:hover {
@@ -292,18 +292,27 @@
   position:fixed;
   background: white;
   width: 80%;
-  height: auto;
+  height: 75%;
   top:50%;
   left:50%;
   transform: translate(-50%,-50%);
+  overflow: scroll;
+  border-radius: 5px;
+  padding: 5%;
 }
 
 .display-block {
   display: block;
+
+
 }
 
 .display-none {
   display: none;
+}
+
+.ReviewsButtons:hover {
+  cursor: pointer;
 }
 
 .ReviewModalExit img {
@@ -311,7 +320,26 @@
   width: 20px;
 
 }
+.ReviewModalExit:hover {
+  cursor: pointer;
 
+}
+
+.summaryInput {
+  width: 75%
+
+}
+
+.bodyInput {
+  width: 75%;
+  min-height: 200px;
+  overflow-wrap: break-word;
+
+}
+.uploads {
+  max-height: 100px;
+  max-width: 100px
+}
 /*###########################~~FOOTER~~################################*/
 .footer {
   background-color: rgb(236, 252, 5);

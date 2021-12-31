@@ -16,7 +16,9 @@ class App extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+
       product_id: 37316, //DUMMY VALUE, gets passed to all components
+
     }
     this.onRelatedProductClick = this.onRelatedProductClick.bind(this)
   }

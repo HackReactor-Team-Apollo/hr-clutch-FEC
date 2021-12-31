@@ -42,6 +42,7 @@ let getMetadata = function (request, callback) {
   axios
     .get(optionsURL, optionsConfig)
     .then(function (response) {
+      console.log('metadata response:', response.data)
       for (var key in response.data.ratings) {
         let value = Number(response.data.ratings[key]);
         sum += value;
@@ -57,12 +58,24 @@ let getMetadata = function (request, callback) {
         4: (Number(response.data.ratings["4"]) / sum) * 100,
         5: (Number(response.data.ratings["5"]) / sum) * 100,
       };
+      for (var key in ratingsPercentages) {
+        if(Number.isNaN(ratingsPercentages[key])) {
+          ratingsPercentages[key] = 0;
+        }
+      }
       response.data.ratings = ratingsPercentages;
+      if (response.data.recommended.true === undefined) {
+        response.data.recommended.true = 0;
+      }
+      if (response.data.recommended.false === undefined) {
+        response.data.recommended.false = 0;
+      }
       let recommendedSum =
         Number(response.data.recommended.true) +
         Number(response.data.recommended.false);
       let recommendedPercentage =
         (Number(response.data.recommended.true) / recommendedSum) * 100;
+        console.log('recoSum:', recommendedSum);
       response.data.recommended = recommendedPercentage.toFixed();
       callback(null, response.data);
     })

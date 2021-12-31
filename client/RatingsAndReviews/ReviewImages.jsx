@@ -1,12 +1,25 @@
 import React from "react";
 
-let ReviewImages = (props) => {
-  return (
-    <div>
-      {props.images.map((image) => (
+// let ReviewImages = (props) => {
+
+class ReviewImages extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {};
+  }
+  renderImages() {
+    if (this.props.images !== undefined) {
+      return this.props.images.map((image) => (
         <img className="reviewImage" src={image.url} key={image.id} />
-      ))}
-    </div>
-  );
+      ))
+    }
+  }
+  render () {
+    return (
+      <div>
+        {this.renderImages()}
+      </div>
+    );
+  }
 };
 export default ReviewImages;
