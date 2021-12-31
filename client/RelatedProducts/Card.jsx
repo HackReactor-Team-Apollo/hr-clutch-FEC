@@ -24,13 +24,11 @@ export default function Card({ current, onRelatedProductClick, Action, changeAct
     return () => { isMounted = false }
   }, [current])
 
-
   if (!styles || !product) return <div>loading...</div>
 
-  // console.log('#STARS', starRating, typeof starRating)
   return (
     <div className="card">
-      <img onClick={() => onRelatedProductClick(current)} src={styles.photos[0].thumbnail_url} style={{ height: "150px", width: '100%' }} />
+      <img onClick={() => onRelatedProductClick(current)} src={styles.photos[0].thumbnail_url || 'https://www.escapeauthority.com/wp-content/uploads/2116/11/No-image-found.jpg'} style={{ height: "150px", width: '100%' }} />
       <Action changeAction={changeAction} product={product} />
       <div className="card-body" onClick={() => onRelatedProductClick(current)}>
         <div>{product.category}</div>
