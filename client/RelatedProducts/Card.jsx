@@ -28,17 +28,17 @@ export default function Card({ current, onRelatedProductClick, Action, changeAct
 
   return (
     <div className="card">
-      <img onClick={() => onRelatedProductClick(current)} src={styles.photos[0].thumbnail_url || 'https://www.escapeauthority.com/wp-content/uploads/2116/11/No-image-found.jpg'} style={{ height: "150px", width: '100%' }} />
+      <img onClick={() => onRelatedProductClick(current)} src={styles.photos[0].thumbnail_url || 'https://www.escapeauthority.com/wp-content/uploads/2116/11/No-image-found.jpg'} style={{ height: "175px", width: '100%' }} />
       <Action changeAction={changeAction} product={product} />
       <div className="card-body" onClick={() => onRelatedProductClick(current)}>
-        <div>{product.category}</div>
-        <div>{product.name}</div>
+        <div className ="small">{product.category}</div>
+        <div className ="small"><strong>{product.name}</strong></div>
         {!styles.sale_price && <p>{styles.original_price}</p>}
         {styles.sale_price && <p style={{ color: 'red' }}>{styles.sale_price}<s style={{ color: 'black' }}>{styles.original_price}</s></p>}
         <StarRatings
           rating={starRating}
           numberOfStars={5}
-          starDimension="20px"
+          starDimension="15px"
           starSpacing="2px"
           starRatedColor="black"
           starEmptyColor= "grey"

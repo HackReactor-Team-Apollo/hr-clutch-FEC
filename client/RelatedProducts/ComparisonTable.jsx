@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Modal from 'react-modal';
+import { Button, ButtonGroup, ButtonToolbar } from 'react-bootstrap-buttons';
+import 'react-bootstrap-buttons/dist/react-bootstrap-buttons.css';
 
 export default function ComparisonTable({ currentProduct, product, changeComparisonOff }) {
   const [topProduct, setTopProduct] = useState(false);
@@ -16,31 +17,28 @@ export default function ComparisonTable({ currentProduct, product, changeCompari
   let productArr = [];
   if (topProduct) {
     for (let i = 0; i < topProduct.features.length; i++) {
-      if (!featuresArr.includes(topProduct.features[i].feature)) {
-        featuresArr.push(topProduct.features[i].feature);
+      if (!featuresArr.includes(topProduct.features[i].value)) {
+        featuresArr.push(topProduct.features[i].value);
       }
-      topProductArr.push(topProduct.features[i].feature);
+      topProductArr.push(topProduct.features[i].value);
     }
     for (let i = 0; i < product.features.length; i++) {
-      if (!featuresArr.includes(product.features[i].feature)) {
-        featuresArr.push(product.features[i].feature)
+      if (!featuresArr.includes(product.features[i].value)) {
+        featuresArr.push(product.features[i].value)
       }
-      productArr.push(product.features[i].feature)
+      productArr.push(product.features[i].value)
     }
   }
 
   return (
     <div className='comparison'>
-      {/* <Modal
-        onRequestClose={changeComparisonOff}
-      > */}
         <h1>Comparing</h1>
         <table className="centerTable">
           <tbody>
             <tr>
-              <td>{topProduct.name}</td>
+              <td><strong>{topProduct.name}</strong></td>
               <td></td>
-              <td>{product.name}</td>
+              <td><strong>{product.name}</strong></td>
             </tr>
             {featuresArr.map((currentFeature, i) => {
               let featureOfTopProduct = false;
@@ -60,8 +58,8 @@ export default function ComparisonTable({ currentProduct, product, changeCompari
             })}
           </tbody>
         </table>
-        <button onClick={changeComparisonOff}>close</button>
-      {/* </Modal> */}
+        <br></br>
+        <Button outline btnStyle="dark" onClick={changeComparisonOff}>Close</Button>
     </div>
 
   )
