@@ -78,7 +78,7 @@ class RelatedProducts extends React.Component {
         rItemsCompare
         <div className='relatedProducts'>
           <h2>Related Products</h2>
-          <div>{this.state.showComparison && <ComparisonTable currentProduct={this.props.product_id} product={this.state.currentRelatedComparison} changeComparisonOff ={this.changeComparisonOff}/>}</div>
+          <div >{this.state.showComparison && <ComparisonTable currentProduct={this.props.product_id} product={this.state.currentRelatedComparison} changeComparisonOff ={this.changeComparisonOff}/>}</div>
           <CarouselProvider
             visibleSlides={5}
             naturalSlideWidth={245}

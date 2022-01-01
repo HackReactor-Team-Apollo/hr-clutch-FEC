@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Button, ButtonGroup, ButtonToolbar } from 'react-bootstrap-buttons';
-import 'react-bootstrap-buttons/dist/react-bootstrap-buttons.css';
 
 export default function ComparisonTable({ currentProduct, product, changeComparisonOff }) {
   const [topProduct, setTopProduct] = useState(false);
@@ -29,7 +27,6 @@ export default function ComparisonTable({ currentProduct, product, changeCompari
       productArr.push(product.features[i].value)
     }
   }
-
   return (
     <div className='comparison'>
         <h1>Comparing</h1>
@@ -59,7 +56,7 @@ export default function ComparisonTable({ currentProduct, product, changeCompari
           </tbody>
         </table>
         <br></br>
-        <Button outline btnStyle="dark" onClick={changeComparisonOff}>Close</Button>
+        <button onClick={changeComparisonOff}>Close</button>
     </div>
 
   )
