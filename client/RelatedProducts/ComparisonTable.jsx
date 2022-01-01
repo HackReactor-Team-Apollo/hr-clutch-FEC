@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Modal from 'react-modal';
 
-export default function ComparisonTable({ currentProduct, product }) {
+export default function ComparisonTable({ currentProduct, product, changeComparisonOff }) {
   const [topProduct, setTopProduct] = useState(false);
   useEffect(() => {
     let isMounted = true;
@@ -29,34 +30,39 @@ export default function ComparisonTable({ currentProduct, product }) {
   }
 
   return (
-    <>
-      <h1>Comparing</h1>
-      <table>
-        <tbody>
-          <tr>
-            <td>{topProduct.name}</td>
-            <td></td>
-            <td>{product.name}</td>
-          </tr>
-          {featuresArr.map((currentFeature, i) => {
-            let featureOfTopProduct = false;
-            let featureOfRelated = false;
-            if (topProductArr.includes(currentFeature)) {
-              featureOfTopProduct = true;
-            }
-            if (productArr.includes(currentFeature)) {
-              featureOfRelated = true;
-            }
-            return (
-              <tr key={i}>
-                <td>{featureOfTopProduct && <>&#10004;</>}</td>
-                <td>{currentFeature}</td>
-                <td>{featureOfRelated && <>&#10004;</>}</td>
-              </tr>)
-          })}
-        </tbody>
-      </table>
-    </>
+    <div className='comparison'>
+      {/* <Modal
+        onRequestClose={changeComparisonOff}
+      > */}
+        <h1>Comparing</h1>
+        <table className="centerTable">
+          <tbody>
+            <tr>
+              <td>{topProduct.name}</td>
+              <td></td>
+              <td>{product.name}</td>
+            </tr>
+            {featuresArr.map((currentFeature, i) => {
+              let featureOfTopProduct = false;
+              let featureOfRelated = false;
+              if (topProductArr.includes(currentFeature)) {
+                featureOfTopProduct = true;
+              }
+              if (productArr.includes(currentFeature)) {
+                featureOfRelated = true;
+              }
+              return (
+                <tr key={i}>
+                  <td>{featureOfTopProduct && <>&#10004;</>}</td>
+                  <td>{currentFeature}</td>
+                  <td>{featureOfRelated && <>&#10004;</>}</td>
+                </tr>)
+            })}
+          </tbody>
+        </table>
+        <button onClick={changeComparisonOff}>close</button>
+      {/* </Modal> */}
+    </div>
 
   )
 };

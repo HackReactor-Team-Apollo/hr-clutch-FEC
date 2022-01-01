@@ -125,6 +125,7 @@
   margin-bottom: 10px;
   margin-left: 10px;
   margin-right: 10px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .relatedProducts {
@@ -153,6 +154,7 @@
 .card-body {
   padding: 20px 10px;
   text-align: center;
+  background: linear-gradient(135deg, #ffffff, #ffffff);
 }
 
 .card:hover {
@@ -189,7 +191,7 @@
 
 .carousel-gradient {
   height: 100%;
-  background: linear-gradient(135deg, #00c900, #0099ff);
+  background: white;
   padding: 2px;
 }
 .carousel-button-back {
@@ -230,6 +232,19 @@
   color: #000;
   text-align: center;
   font: 32px Arial, sans-serif;
+}
+
+.comparison {
+  text-align: center;
+  transition: 0.3s;
+  width: 90%;
+  border: 1px solid #ccc;
+  margin: 10px;
+  position: relative;
+}
+.centerTable {
+  margin-left: auto;
+  margin-right: auto;
 }
 /*###########################~~RATINGS AND REVIEWS~~################################*/
 .rateRev {

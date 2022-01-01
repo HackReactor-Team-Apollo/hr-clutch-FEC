@@ -40,7 +40,8 @@ export default function Card({ current, onRelatedProductClick, Action, changeAct
           numberOfStars={5}
           starDimension="20px"
           starSpacing="2px"
-          starRatedColor="blue"
+          starRatedColor="black"
+          starEmptyColor= "grey"
         />
       </div>
     </div>

@@ -26,9 +26,10 @@ class RelatedProducts extends React.Component {
       favorites: [],
     }
     this.getRelated = this.getRelated.bind(this);
-    this.changeComparison = this.changeComparison.bind(this);
+    this.changeComparisonOn = this.changeComparisonOn.bind(this);
     this.addToFavorites = this.addToFavorites.bind(this);
     this.removeFromFavorites = this.removeFromFavorites.bind(this);
+    this.changeComparisonOff = this.changeComparisonOff.bind(this);
   }
   getRelated() {
     let that = this
@@ -37,9 +38,12 @@ class RelatedProducts extends React.Component {
         that.setState({ related: response.data })
       })
   }
-  changeComparison(product) {
-    this.setState({ showComparison: !this.state.showComparison })
+  changeComparisonOn(product) {
+    this.setState({ showComparison: true})
     this.setState({ currentRelatedComparison: product })
+  }
+  changeComparisonOff() {
+    this.setState({ showComparison: false})
   }
   componentDidMount() {
     this.getRelated()
@@ -74,6 +78,7 @@ class RelatedProducts extends React.Component {
         rItemsCompare
         <div className='relatedProducts'>
           Related Products
+          <div>{this.state.showComparison && <ComparisonTable currentProduct={this.props.product_id} product={this.state.currentRelatedComparison} changeComparisonOff ={this.changeComparisonOff}/>}</div>
           <CarouselProvider
             visibleSlides={5}
             naturalSlideWidth={245}
@@ -88,7 +93,7 @@ class RelatedProducts extends React.Component {
                   {related.map((currentRelated, i) => {
                     return (
                       <Slide>
-                        <Card key={i} current={currentRelated} onRelatedProductClick={this.props.onRelatedProductClick} Action={AddToCompare} changeAction={this.changeComparison} />
+                        <Card key={i} current={currentRelated} onRelatedProductClick={this.props.onRelatedProductClick} Action={AddToCompare} changeAction={this.changeComparisonOn} />
                       </Slide>
                     );
                   })}
@@ -100,7 +105,6 @@ class RelatedProducts extends React.Component {
                   </>}
               </div>
             </div>
-            <div>{this.state.showComparison && <ComparisonTable currentProduct={this.props.product_id} product={this.state.currentRelatedComparison} />}</div>
           </CarouselProvider>
         </div>
         <div className='favoriteProducts'>
