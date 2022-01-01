@@ -1,6 +1,7 @@
 import React from "react";
 import ReviewImages from "./ReviewImages.jsx";
 import axios from "axios";
+import StarRatings from 'react-star-ratings';
 class ReviewTile extends React.Component {
   constructor(props) {
     super(props);
@@ -8,6 +9,7 @@ class ReviewTile extends React.Component {
       review_id: this.props.review.review_id,
       marked: false
     };
+    this.renderOverallRating=this.renderOverallRating.bind(this);
   }
   convertTime(milliseconds) {
     let date = new Date(milliseconds);
@@ -22,12 +24,16 @@ class ReviewTile extends React.Component {
   }
   isRecommended(review) {
     if (review.recommend) {
-      return <div>I recommend this product</div>;
+      return <div className="ratingrecommend">&#10004; I recommend this product</div>;
     }
   }
   showResponse(review) {
     if (review.response !== null) {
-      return  <div>Response from seller:{this.props.review.response}</div>;
+      return (
+      <div className="ratingresponse">Response from seller:
+        <div className="ratingresponsetext">{this.props.review.response}</div>
+      </div>
+      );
     }
   }
   markHelpful() {
@@ -55,20 +61,35 @@ class ReviewTile extends React.Component {
         console.log('PUT Error:', error);
       })
   }
+  renderOverallRating () {
+    if(this.props.review.rating !== undefined) {
+
+      return (
+        <>
+          <StarRatings
+        rating={Number(this.props.review.rating)}
+        starDimension="15px"
+        starSpacing="5px"
+      />
+        </>
+      )
+    }
+  }
   render() {
     return (
       <>
-        <div key={this.props.review.review_id}>
-          <div>Star Rating: {this.props.review.rating}</div>
-          <div>User: {this.props.review.reviewer_name}</div>
-          <div>
-            Date: {this.convertTime(Date.parse(this.props.review.date))}
+        <div className="reviewtile" key={this.props.review.review_id}>
+          <div className="reviewrating">{this.renderOverallRating()}</div>
+          <div className="ratinguser">{this.props.review.reviewer_name},</div>
+          <div className="ratingdate">
+            {this.convertTime(Date.parse(this.props.review.date))}
           </div>
-          <div>Summary: {this.props.review.summary}</div>
-          <div>Body: {this.props.review.body}</div>
+          <div className="ratingsummary">{this.props.review.summary}</div>
+          <div className="ratingbody">{this.props.review.body}</div>
           {this.isRecommended(this.props.review)}
-          <div>Helpful?</div>
+          <div className="helpfuldiv"><span className="helpfulspan">Helpful?</span>
           <div onClick={this.markHelpful.bind(this)} className="helpfulReview">Yes({this.props.review.helpfulness})</div>
+          </div>
           <div onClick={this.reportReview.bind(this)} className="reportReview">Report</div>
           {this.showResponse(this.props.review)}
           <ReviewImages images={this.props.review.photos} />

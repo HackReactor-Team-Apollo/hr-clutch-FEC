@@ -8,12 +8,18 @@ const Modal = ({ handleClose, show, children }) => {
     <div className={showHideClassName}>
       <section className="modal-main">
         {children}
-        <button className="ReviewModalExit" type="button" onClick={handleClose}>
-          <img src={QAExitIcon}/>
+        <br></br>
+        <div className="closeModal">
+          <br></br>
+        <button className="ReviewModalExit" type="button" onClick={handleClose}> Close Window
+
         </button>
+        </div>
       </section>
     </div>
   );
 };
 
 export default Modal;
+
+{/* <img src={QAExitIcon}/> */}

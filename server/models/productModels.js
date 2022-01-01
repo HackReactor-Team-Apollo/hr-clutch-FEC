@@ -29,9 +29,17 @@ const getStyleOfProduct = function (productID, callback) {
       callback(null, response.data);
     });
 }
+
+const getProductDetailsInfo = function (productID, callback) {
+  axios.get(`${url}/products/${productID}/styles`, {headers: {Authorization: authToken}})
+    .then(function (response) {
+      callback(null, response.data);
+    });
+}
 module.exports = {
   getAllProducts,
   getSpecificProduct,
   getRelatedProducts,
-  getStyleOfProduct
+  getStyleOfProduct,
+  getProductDetailsInfo
 }

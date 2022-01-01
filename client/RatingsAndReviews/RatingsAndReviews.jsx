@@ -25,12 +25,7 @@ class RatingsAndReviews extends React.Component {
       ratingsCount: 0,
       characteristics: {},
       sort: "relevant",
-      onereviews: [],
-      tworeviews: [],
-      threereviews: [],
-      fourreviews: [],
-      fivereviews: [],
-      backupreviews: [],
+
       showOne: false,
       showTwo: false,
       showThree: false,
@@ -79,11 +74,7 @@ class RatingsAndReviews extends React.Component {
   }
   getReviews() {
     let that = this;
-    let onereviewsArr = [];
-    let tworeviewsArr = [];
-    let threereviewsArr = [];
-    let fourreviewsArr = [];
-    let fivereviewsArr = [];
+
 
     axios
       .get(
@@ -91,23 +82,7 @@ class RatingsAndReviews extends React.Component {
       )
       .then(function (response) {
         console.log("getreviews data:", response.data);
-        // response.data.results.forEach((review) => {
-        //   if (review.rating === 1) {
-        //     onereviewsArr.push(review);
-        //   }
-        //   if (review.rating === 2) {
-        //     tworeviewsArr.push(review);
-        //   }
-        //   if (review.rating === 3) {
-        //     threereviewsArr.push(review);
-        //   }
-        //   if (review.rating === 4) {
-        //     fourreviewsArr.push(review);
-        //   }
-        //   if (review.rating === 5) {
-        //     fivereviewsArr.push(review);
-        //   }
-        // });
+
         let filtered = that.filterReviews(response.data.results);
         that.setState({
           reviews: filtered,
@@ -165,25 +140,7 @@ class RatingsAndReviews extends React.Component {
         console.log("Change Reviews Error:", error);
       });
   }
-  // addFilter() {
-  //   return new Promise(function (resolve, reject) {
-  //     that.setState({ [value]: true }, function (error, result) {
-  //       if (error) {
-  //         reject(error);
-  //       } else {
-  //         resolve (result);
-  //       }
-  //     });
-  //   });
-  //   addFilter()
-  //       .then(function(result) {
-  //         that.getReviews();
-  //       })
-  //       .catch(function(error) {
-  //         console.log('Add Filter Error:', error);
-  //       });
 
-  // }
   onClick(e) {
     let that = this;
     let value = e.target.value;
@@ -227,28 +184,7 @@ class RatingsAndReviews extends React.Component {
           console.log('Remove Filter Error:', error);
         });
     }
-    // let count = 0;
-    // let tempReviews = [];
-    // let showingObj = {
-    //   showOne: 'onereviews',
-    //   showTwo: 'tworeviews',
-    //   showThree: 'threereviews',
-    //   showFour: 'fourreviews',
-    //   showFive: 'fivereviews'
-    // };
-    // for (var key in showingObj) {
-    //   if (this.state[key] === true) {
-    //     tempReviews.push(this.state[showingObj[key]])
-    //     count++;
-    //   }
-    // }
-    // console.log ('temp reviews:', tempReviews);
-    // if (count === 0) {
-    //   this.getReviews();
-    // }
-    // if (count > 0) {
-    //   this.setState({reviews: tempReviews});
-    // }
+
 
   }
   componentDidMount() {
@@ -316,24 +252,30 @@ class RatingsAndReviews extends React.Component {
           <ProductBreakdown characteristics={this.state.characteristics} />
         </div>
         <div className="reviews">
-          reviews
+
           <SortReviews
             sort={this.state.sort}
             ratingsCount={this.state.ratingsCount}
             onSortSelection={this.onSortSelection}
           />
-          <ReviewList reviews={this.state.reviews} getRevs={this.getReviews} />
-          <MoreReviewsButton onClick={this.onMoreReviewsClick} />
-          <Modal show={this.state.show} handleClose={this.hideModal}>
-            <h1>Write Your Review</h1>
-            <div>About the {this.state.currentProductInfo.name}</div>
-            <ReviewModalForm
-              characteristics={Object.keys(this.state.characteristics)}
-            />
-          </Modal>
-          <button className="ReviewsButtons" onClick={this.showModal}>
-            Add A Review
-          </button>
+          <br></br>
+          <div className="reviewlist">
+            <ReviewList reviews={this.state.reviews} getRevs={this.getReviews} />
+          </div>
+          <div className="reviewlistbuttons">
+            <MoreReviewsButton onClick={this.onMoreReviewsClick} />
+            <Modal show={this.state.show} handleClose={this.hideModal}>
+              <h1>Write Your Review</h1>
+              <div>About the {this.state.currentProductInfo.name}</div>
+              <ReviewModalForm
+                characteristics={this.state.characteristics}
+                product_id={this.state.product_id}
+              />
+            </Modal>
+            <button className="ReviewsButtons" onClick={this.showModal}>
+              Add A Review
+            </button>
+          </div>
         </div>
       </div>
     );

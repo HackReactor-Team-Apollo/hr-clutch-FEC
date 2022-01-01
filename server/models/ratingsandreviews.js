@@ -22,7 +22,7 @@ let getReviews = function (request, callback) {
       callback(null, response.data);
     })
     .catch(function (error) {
-      //console.log("getReviews did not work:", error);
+
       callback(error);
     });
 };

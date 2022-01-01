@@ -16,7 +16,7 @@ class ReviewImages extends React.Component {
   }
   render () {
     return (
-      <div>
+      <div className="ratingimages">
         {this.renderImages()}
       </div>
     );
