@@ -242,11 +242,7 @@ class RatingsAndReviews extends React.Component {
             recommended={this.state.recommendedPercentage}
             ratingsCount={this.state.ratingsCount}
             getReviews={this.getReviews}
-            onereviews={this.state.onereviews}
-            tworeviews={this.state.tworeviews}
-            threereviews={this.state.threereviews}
-            fourreviews={this.state.fourreviews}
-            fivereviews={this.state.fivereviews}
+
             click={this.onClick}
           />
           <ProductBreakdown characteristics={this.state.characteristics} />
@@ -266,7 +262,7 @@ class RatingsAndReviews extends React.Component {
             <MoreReviewsButton onClick={this.onMoreReviewsClick} />
             <Modal show={this.state.show} handleClose={this.hideModal}>
               <h1>Write Your Review</h1>
-              <div>About the {this.state.currentProductInfo.name}</div>
+              <div>About the <span style={{ textDecoration: 'underline' }}>{this.state.currentProductInfo.name}</span></div>
               <ReviewModalForm
                 characteristics={this.state.characteristics}
                 product_id={this.state.product_id}
