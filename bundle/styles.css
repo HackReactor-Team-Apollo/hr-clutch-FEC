@@ -210,22 +210,23 @@
   border: 1px solid #ccc;
   margin: 10px;
   flex: 2 0 21%;
-  max-width: 150px;
-  min-width: 150px;
+  max-width: 160px;
+  min-width: 160px;
+  display: inline-block;
+
 }
 .card-body {
-  padding: 20px 10px;
+  padding: 20px 5px;
   text-align: center;
   background: linear-gradient(135deg, #ffffff, #ffffff);
+  white-space: -webkit-pre-wrap;
+  word-break: normal;
+  white-space: normal;
 }
 
 .card:hover {
   transform: scale(1.05);
   box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
-}
-
-.cardContainer {
-  padding: 2px 16px;
 }
 
 .topright {
@@ -255,6 +256,7 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+
 }
 .circle {
   margin: 10px;
@@ -265,9 +267,11 @@
   border: 1px solid #ccc;
   color: #000;
   text-align: center;
-  font: 32px Arial, sans-serif;
+  font: 30px Arial, sans-serif;
   max-width: 150px;
   min-width: 150px;
+  display: inline-block;
+  padding: 50px 0 50px;
 }
 
 .comparison {
@@ -303,57 +307,64 @@ h2:after {
 }
 
 .small {
-  font-size: 14px;
-}
-
-.arrow {
-  width: 2rem;
-  font-size: 50px;
-  margin: 0 1rem;
-  display: inline-block;
-  float:left
+  font-size: 13px;
 }
 
 .carousel-gradient {
-  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
   overflow-x: auto;
-  /* flex: 0 0 auto;
-  object-fit: cover;
-  margin: 5px;
-  transform: scale(.95); */
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: middle;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
 }
 .carousel-gradient::-webkit-scrollbar {
   display: none;
 }
-.paddle {
-  position: relative;
-  top: 0;
-  bottom: 0;
-  width: 3em;
+
+.carousel-gradient-favorites {
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: middle;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
 }
-.left-paddle {
-  left: 0;
-}
-.right-paddle {
-  right: 0;
-}
-.hidden {
+.carousel-gradient-favorites::-webkit-scrollbar {
   display: none;
 }
-
-.print {
-  margin: auto;
-  max-width: 500px;
-
-  span {
-    display: inline-block;
-    width: 100px;
-  }
+.prev, .next {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 100%;
+  margin: 0 auto;
+  cursor: pointer;
+  color: black;
+  transition: 0.6s ease;
+  font-size: 30px;
+}
+.next {
+  margin-left: 5px;
+}
+.prev {
+  margin-right: 5px;
+}
+.prev:hover, .next:hover {
+  color: white;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
 }
 
 

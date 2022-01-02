@@ -6,6 +6,7 @@ import axios from 'axios';
 import ComparisonTable from './ComparisonTable.jsx';
 import AddToCompare from './AddToCompare.jsx';
 import RemoveFavorite from './RemoveFavorite.jsx';
+import $ from "jquery";
 
 class RelatedProducts extends React.Component {
   constructor(props) {
@@ -15,12 +16,35 @@ class RelatedProducts extends React.Component {
       showComparison: false,
       currentRelatedComparison: null,
       favorites: [],
+      scrolled: 0,
+      scrolledFavorites: 0,
     }
     this.getRelated = this.getRelated.bind(this);
     this.changeComparisonOn = this.changeComparisonOn.bind(this);
     this.addToFavorites = this.addToFavorites.bind(this);
     this.removeFromFavorites = this.removeFromFavorites.bind(this);
     this.changeComparisonOff = this.changeComparisonOff.bind(this);
+    this.scroll = this.scroll.bind(this);
+    this.handleRelatedProcuctClick = this.handleRelatedProcuctClick.bind(this);
+    this.scrollFavorites = this.scrollFavorites.bind(this);
+  }
+  scroll(direction) {
+    let far = 180 * direction;
+    let pos = $('.carousel-gradient').scrollLeft() + far;
+    $('.carousel-gradient').animate({ scrollLeft: pos }, 500)
+    this.setState({scrolled: this.state.scrolled + direction})
+  }
+  scrollFavorites(direction) {
+    let far = 180 * direction;
+    let pos = $('.carousel-gradient-favorites').scrollLeft() + far;
+    $('.carousel-gradient-favorites').animate({ scrollLeft: pos }, 500)
+    this.setState({scrolledFavorites: this.state.scrolledFavorites + direction})
+  }
+  handleRelatedProcuctClick(current) {
+    this.props.onRelatedProductClick(current);
+    this.setState({scrolled: 0});
+    this.setState({scrolledFavorites: 0});
+    $('.carousel-gradient').animate({ scrollLeft: 0 })
   }
   getRelated() {
     let that = this
@@ -61,7 +85,7 @@ class RelatedProducts extends React.Component {
   }
 
   render() {
-    const { related, favorites } = this.state;
+    const { related, favorites, scrolled, scrolledFavorites } = this.state;
 
 
     return (
@@ -71,27 +95,24 @@ class RelatedProducts extends React.Component {
           <h2>Related Products</h2>
           <main>
             <div >{this.state.showComparison && <ComparisonTable currentProduct={this.props.product_id} product={this.state.currentRelatedComparison} changeComparisonOff={this.changeComparisonOff} />}</div>
-
-
             <span className='carousel-container'>
+              {scrolled > 0 && <a className="prev" onClick={this.scroll.bind(null, -1)}>&#10094;</a>}
               <span className='carousel-gradient'>
-                <span alt="left" id="slide-left" className="arrow">&#8592;</span>
+
                 {related.map((currentRelated, i) => {
                   return (
-                    <Card key={i} current={currentRelated} onRelatedProductClick={this.props.onRelatedProductClick} Action={AddToCompare} changeAction={this.changeComparisonOn} />
+                    <Card key={i} current={currentRelated} onRelatedProductClick={this.handleRelatedProcuctClick} Action={AddToCompare} changeAction={this.changeComparisonOn} />
                   );
                 })}
-                <span alt="right" id="slide-right" className="arrow">&#8594;</span>
+
               </span>
+              {related.length > 5 &&
+                <>
+                {scrolled + 5 < related.length && <a className="next" onClick={this.scroll.bind(null, 1)}>&#10095;</a>}
+
+                </>}
+
             </span>
-            <div className="paddles">
-              <button className="left-paddle paddle hidden">
-              &#171;
-		</button>
-              <button className="right-paddle paddle">
-              &#187;
-              </button>
-            </div>
 
 
           </main>
@@ -103,24 +124,28 @@ class RelatedProducts extends React.Component {
 
 
             <span className='carousel-container'>
-              <span className='carousel-gradient'><span alt="left" id="slide-left" className="arrow">&#8592;</span>
-                <span className='circle' onClick={this.addToFavorites}>
-                  <div>Add to Outfit</div>
-                  <div>&#43;</div>
-                </span>
+
+              <span className='circle' onClick={this.addToFavorites}>
+                <div>Add to </div>
+                <div>Outfit</div>
+                <br></br>
+                <div>&#43;</div>
+              </span>
+              {scrolledFavorites > 0 && <a className="prev" onClick={this.scrollFavorites.bind(null, -1)}>&#10094;</a>}
+              <span className='carousel-gradient-favorites'>
+
                 {favorites.map((currentFavorite, i) => {
                   return (
                     <Card key={i} current={currentFavorite} onRelatedProductClick={this.props.onRelatedProductClick} Action={RemoveFavorite} changeAction={this.removeFromFavorites} />
                   );
                 })}
 
-                {/* {favorites.length > 4 &&
-                  <>
-                    <ButtonBack className="carousel-button-back">&lsaquo;</ButtonBack>
-                    <ButtonNext className="carousel-button-next">&rsaquo;</ButtonNext>
-                  </>} */}
-                <span alt="right" id="slide-right" className="arrow">&#8594;</span>
               </span>
+              {favorites.length > 4 &&
+                <>
+                  {scrolledFavorites + 4 < favorites.length && <a className="next" onClick={this.scrollFavorites.bind(null, 1)}>&#10095;</a>}
+                </>}
+
             </span>
 
 
