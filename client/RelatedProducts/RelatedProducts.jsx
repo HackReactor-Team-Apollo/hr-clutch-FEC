@@ -100,9 +100,7 @@ class RelatedProducts extends React.Component {
 
                 {related.map((currentRelated, i) => {
                   return (
-                    <div key={i}>
-                      <Card current={currentRelated} onRelatedProductClick={this.handleRelatedProcuctClick} Action={AddToCompare} changeAction={this.changeComparisonOn} />
-                    </div>
+                      <Card key={i} current={currentRelated} onRelatedProductClick={this.handleRelatedProcuctClick} Action={AddToCompare} changeAction={this.changeComparisonOn} />
                   );
                 })}
               </span>
@@ -127,9 +125,7 @@ class RelatedProducts extends React.Component {
               <span className='carousel-gradient-favorites'>
                 {favorites.map((currentFavorite, i) => {
                   return (
-                    <div key={i}>
-                      <Card current={currentFavorite} onRelatedProductClick={this.props.onRelatedProductClick} Action={RemoveFavorite} changeAction={this.removeFromFavorites} />
-                    </div>
+                      <Card key={i} current={currentFavorite} onRelatedProductClick={this.props.onRelatedProductClick} Action={RemoveFavorite} changeAction={this.removeFromFavorites} />
                   );
                 })}
               </span>
