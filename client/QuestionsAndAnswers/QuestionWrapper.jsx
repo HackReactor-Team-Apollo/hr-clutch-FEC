@@ -1,6 +1,7 @@
 import React from 'react'
 import AnswersBody from './AnswersBody.jsx'
 import AnswerLoadAndAdd from './AnswerLoadAndAdd.jsx'
+import axios from 'axios'
 
 class QuestionWrapper extends React.Component {
   constructor (props) {
@@ -11,15 +12,37 @@ class QuestionWrapper extends React.Component {
     }
     this.loadMoreAnswers = this.loadMoreAnswers.bind(this)
     this.questionHelpful = this.questionHelpful.bind(this)
+    this.questionReported = this.questionReported.bind(this)
   }
 componentDidUpdate() {
 
   //console.log(this.state.questionData)
 }
 questionHelpful() {
-  console.log(this.state.questionData)
+  let questionID = this.state.questionData.question_id;
+  axios
+  .put(`/qa/questions/${questionID}/helpful`)
+  .then(() => {
+    console.log(questionID)
+    console.log('Marked helpful')
+  })
+  .catch(() => {
+    console.log('failure')
+  })
 }
 
+questionReported() {
+  let questionID = this.state.questionData.question_id;
+  axios
+  .put(`/qa/questions/${questionID}/report`)
+  .then(() => {
+    console.log(questionID)
+    console.log('Reported')
+  })
+  .catch(() => {
+    console.log('failure')
+  })
+}
 loadMoreAnswers() {
   this.setState({answerCount:(this.state.answerCount+=2)})
 }
@@ -36,17 +59,17 @@ loadMoreAnswers() {
         <div className='QuesElementWrapper'>
           <div className='QuestionText'>{this.state.questionData.question_body}</div>
           <div className='QAQHRWrapper'>
-            <button onClick={this.questionHelpful} className='QAQHelpful'>
-              <div >Helpful?</div>
+            <div className='QAQHelpful'>
+              Helpful?
               <div onClick={this.questionHelpful} className='QAQHelpfulTxt'>Yes</div>
               <div onClick={this.questionHelpful} className='QAQHelpfulTxt'>(2)</div>
-            </button>
-            <div className='QAQReport'> Report Question?</div>
+            </div>
+            <div onClick={this.questionReported} className='QAQReport'> Report Question?</div>
           </div>
         </div>
 
         <AnswersBody answerArray={finalAnswerArray}/>
-        <AnswerLoadAndAdd loadMoreAnswers={this.loadMoreAnswers}/>
+        <AnswerLoadAndAdd loadMoreAnswers={this.loadMoreAnswers} question_id={this.state.questionData.question_id}/>
       </div>
     )
   }

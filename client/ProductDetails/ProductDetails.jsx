@@ -103,7 +103,7 @@ componentDidUpdate(prevProps) {
 
 
 handleChange(event) {
-  console.log('EVENT TARGET VALUE: ', event.target.value)
+  //console.log('EVENT TARGET VALUE: ', event.target.value)
   let that = this;
 //   let sizeToQuantity = function(currentSize) {
 //     let maxQuantity = 0;
@@ -120,8 +120,8 @@ handleChange(event) {
 // }
 let getCurrentSize = function(newSku) {
   let currentSize = 0;
-  console.log('NEW SKUUUUU: ', newSku);
-  console.log('FUNCTION this.state.styleSkus: ', this.state)
+  //console.log('NEW SKUUUUU: ', newSku);
+  //console.log('FUNCTION this.state.styleSkus: ', this.state)
   for (let i = 0; i < this.state.styleSkus.length; i++) {
       if (newSku === this.state.styleSkus[i].sku) {
           currentSize = this.state.styleSkus[i].size

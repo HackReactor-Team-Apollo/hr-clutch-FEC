@@ -52,17 +52,18 @@ const ProductProgressbar = ({bgcolor,progress,height}) => {
 
 
     return (
+    <>
+      <div className="productprog" style={Parentdiv}>
 
-    <div className="productprog" style={Parentdiv}>
+        <div style={Childdiv}>
 
-      <div style={Childdiv}>
+          <span style={progresstext}>&#9830;</span>
 
-        <span style={progresstext}>&#9830;</span>
+        </div>
 
       </div>
-
-    </div>
-
+      <br></br>
+    </>
     )
 }
 

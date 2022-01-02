@@ -1,7 +1,14 @@
 import React from "react";
 import ReviewImages from "./ReviewImages.jsx";
 import axios from "axios";
-import StarRatings from 'react-star-ratings';
+// import StarRatings from 'react-star-ratings';
+import StarRating from './StarRatingBar.jsx';
+
+// {/* <StarRatings
+//         rating={Number(this.props.review.rating)}
+//         starDimension="15px"
+//         starSpacing="5px"
+//       /> */}
 class ReviewTile extends React.Component {
   constructor(props) {
     super(props);
@@ -41,7 +48,7 @@ class ReviewTile extends React.Component {
     if (this.state.marked === false) {
       axios.put("/reviews/:reviewId/helpful", {review_id: this.state.review_id})
         .then(function(response) {
-          console.log('this worked:', response);
+          //console.log('this worked:', response);
           that.setState({marked: true})
           that.props.getRevs();
         })
@@ -54,7 +61,7 @@ class ReviewTile extends React.Component {
     let that = this;
     axios.put("/reviews/:reviewId/report", {review_id: this.state.review_id})
       .then(function(response) {
-        console.log('this worked:', response);
+        //console.log('this worked:', response);
         that.props.getRevs();
       })
       .catch(function(error) {
@@ -63,14 +70,11 @@ class ReviewTile extends React.Component {
   }
   renderOverallRating () {
     if(this.props.review.rating !== undefined) {
-
+      let leftPercentage = (this.props.review.rating / 5) * 100;
+      let rightPercentage = 100 - leftPercentage;
       return (
         <>
-          <StarRatings
-        rating={Number(this.props.review.rating)}
-        starDimension="15px"
-        starSpacing="5px"
-      />
+          <StarRating currentRating={this.props.review.rating} leftPercentage={leftPercentage} rightPercentage={rightPercentage} />
         </>
       )
     }

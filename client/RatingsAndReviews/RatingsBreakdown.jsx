@@ -1,6 +1,9 @@
 import React from "react";
 import StarRatings from 'react-star-ratings';
 import RatingsProgressbar from './RatingsProgress_bar.jsx';
+import StarRating from './StarRatingBar.jsx';
+
+
 class RatingsBreakdown extends React.Component {
   constructor(props) {
     super(props);
@@ -9,15 +12,13 @@ class RatingsBreakdown extends React.Component {
   }
   renderOverallRating () {
     if(this.props.ratings.avg !== undefined) {
+      let leftPercentage = (this.props.ratings.avg / 5) * 100;
+      let rightPercentage = 100 - leftPercentage;
 
       return (
         <div className="bigRating">
           <div className="bigNumber">{this.props.ratings.avg}</div>
-            <StarRatings
-          rating={Number(this.props.ratings.avg)}
-          starDimension="15px"
-          starSpacing="5px"
-          />
+          <StarRating currentRating={Number(this.props.ratings.avg)} leftPercentage={leftPercentage} rightPercentage={rightPercentage}/>
           <br></br>
         </div >
       )

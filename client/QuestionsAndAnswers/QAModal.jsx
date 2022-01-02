@@ -1,33 +1,19 @@
 import React, { useState, useCallback } from 'react'
 import { render } from 'react-dom'
-import { useModal } from 'react-hooks-use-modal'
 import QAExitIcon from '../assets/QAExitIcon.png'
 
-const QAModal = () => {
-  const [Modal, open, close, isOpen] = useModal('App', {
-    preventScroll: true,
-    closeOnOverlayClick: true
-  })
+const QAModal = ({ handleClose, submit, show, children, product_id }) => {
+  const showHideClassName = show
+    ? 'QAModalOverlay display-block'
+    : 'QAModalOverlay display-none'
+
   return (
-    <div>
-      <button className='QAModalBtn' onClick={open}>
-        Add New Answer
+    <div className={showHideClassName}>
+      {children}
+      <button className="QACloseAndSubmitBtns" type='button' onClick={handleClose}>
+        Close
       </button>
-      <Modal>
-        <div className='QAModalOverlay'>
-          <div className='QAModalHeader'>
-            <div>Answer Form</div>
-            <button className='QAModalExit' onClick={close}>
-              <img src={QAExitIcon} />
-            </button>
-          </div>
-          <input
-            className='QAModalInputText'
-            placeholder='Type your answer here'
-          />
-          <button className='QAModalSubmit' onClick={close}>Submit</button>
-        </div>
-      </Modal>
+      <button className="QACloseAndSubmitBtns" onClick={submit}>Submit</button>
     </div>
   )
 }

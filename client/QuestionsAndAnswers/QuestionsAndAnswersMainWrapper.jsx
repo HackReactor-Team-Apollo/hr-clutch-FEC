@@ -12,7 +12,6 @@ class QuestionsAndAnswers extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      productID: this.props.product_id,
       currentPage: 1,
       questionsPerLoad: 2,
       questionArray: []
@@ -40,7 +39,7 @@ class QuestionsAndAnswers extends React.Component {
     //Axios Request
     axios
       .get(
-        `/qa/questions/?product_id=${this.state.productID}&page=${this.state.currentPage}&count=${this.state.questionsPerLoad}`
+        `/qa/questions/?product_id=${this.props.product_id}&page=${this.state.currentPage}&count=${this.state.questionsPerLoad}`
       )
       .then(res => {
         this.setState(
@@ -69,7 +68,11 @@ class QuestionsAndAnswers extends React.Component {
   //QuestionReport
   //AnswerHelpful
   //AnswerReport
-
+  componentDidUpdate(prevProps) {
+    if (this.props.product_id !== prevProps.product_id) {
+    this.setState({questionArray:[]}, this.loadMoreQuestions())
+    }
+  }
   render () {
     //console.log(this.state.questionArray, "console here")
     return (
@@ -79,6 +82,7 @@ class QuestionsAndAnswers extends React.Component {
         <QuestionLoadAndAdd
           loadMoreQuestions={this.loadMoreQuestions}
           submitQuestion={this.submitQuestion}
+          product_id={this.props.product_id}
         />
       </div>
     )
