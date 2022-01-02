@@ -32,18 +32,18 @@ class RelatedProducts extends React.Component {
     let far = 180 * direction;
     let pos = $('.carousel-gradient').scrollLeft() + far;
     $('.carousel-gradient').animate({ scrollLeft: pos }, 500)
-    this.setState({scrolled: this.state.scrolled + direction})
+    this.setState({ scrolled: this.state.scrolled + direction })
   }
   scrollFavorites(direction) {
     let far = 180 * direction;
     let pos = $('.carousel-gradient-favorites').scrollLeft() + far;
     $('.carousel-gradient-favorites').animate({ scrollLeft: pos }, 500)
-    this.setState({scrolledFavorites: this.state.scrolledFavorites + direction})
+    this.setState({ scrolledFavorites: this.state.scrolledFavorites + direction })
   }
   handleRelatedProcuctClick(current) {
     this.props.onRelatedProductClick(current);
-    this.setState({scrolled: 0});
-    this.setState({scrolledFavorites: 0});
+    this.setState({ scrolled: 0 });
+    this.setState({ scrolledFavorites: 0 });
     $('.carousel-gradient').animate({ scrollLeft: 0 })
   }
   getRelated() {
@@ -90,7 +90,6 @@ class RelatedProducts extends React.Component {
 
     return (
       <div className='rItemsCompare'>
-        rItemsCompare
         <div className='relatedProducts'>
           <h2>Related Products</h2>
           <main>
@@ -101,30 +100,23 @@ class RelatedProducts extends React.Component {
 
                 {related.map((currentRelated, i) => {
                   return (
-                    <Card key={i} current={currentRelated} onRelatedProductClick={this.handleRelatedProcuctClick} Action={AddToCompare} changeAction={this.changeComparisonOn} />
+                    <div key={i}>
+                      <Card current={currentRelated} onRelatedProductClick={this.handleRelatedProcuctClick} Action={AddToCompare} changeAction={this.changeComparisonOn} />
+                    </div>
                   );
                 })}
-
               </span>
               {related.length > 5 &&
                 <>
-                {scrolled + 5 < related.length && <a className="next" onClick={this.scroll.bind(null, 1)}>&#10095;</a>}
-
+                  {scrolled + 5 < related.length && <a className="next" onClick={this.scroll.bind(null, 1)}>&#10095;</a>}
                 </>}
-
             </span>
-
-
           </main>
         </div>
         <div className='favoriteProducts'>
-
           <h2>Your Outfit</h2>
           <main>
-
-
             <span className='carousel-container'>
-
               <span className='circle' onClick={this.addToFavorites}>
                 <div>Add to </div>
                 <div>Outfit</div>
@@ -133,29 +125,22 @@ class RelatedProducts extends React.Component {
               </span>
               {scrolledFavorites > 0 && <a className="prev" onClick={this.scrollFavorites.bind(null, -1)}>&#10094;</a>}
               <span className='carousel-gradient-favorites'>
-
                 {favorites.map((currentFavorite, i) => {
                   return (
-                    <Card key={i} current={currentFavorite} onRelatedProductClick={this.props.onRelatedProductClick} Action={RemoveFavorite} changeAction={this.removeFromFavorites} />
+                    <div key={i}>
+                      <Card current={currentFavorite} onRelatedProductClick={this.props.onRelatedProductClick} Action={RemoveFavorite} changeAction={this.removeFromFavorites} />
+                    </div>
                   );
                 })}
-
               </span>
               {favorites.length > 4 &&
                 <>
                   {scrolledFavorites + 4 < favorites.length && <a className="next" onClick={this.scrollFavorites.bind(null, 1)}>&#10095;</a>}
                 </>}
-
             </span>
-
-
           </main>
         </div>
-
-
-
       </div >
-
     )
   }
 }

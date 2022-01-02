@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import StarRatings from 'react-star-ratings';
+import StarRating from './StarRatings.jsx';
 
 
 export default function Card({ current, onRelatedProductClick, Action, changeAction }) {
   const [styles, setStyles] = useState(false);
   const [product, setProduct] = useState(false);
-  const [starRating, setStars] = useState(0);
+  const [starRating, setStars] = useState(null);
+  const [leftPercentage, setLeft] = useState(null);
+  const [rightPercentage, setRight] = useState(null);
 
   useEffect(() => {
     let isMounted = true;
@@ -17,31 +19,35 @@ export default function Card({ current, onRelatedProductClick, Action, changeAct
       if (isMounted) setProduct(response.data);
     });
     axios.get(`/reviews/meta?product_id=${current}`).then((response) => {
-      if(response.data.ratings.avg !== 'NaN') {
-        if (isMounted) setStars(parseFloat(response.data.ratings.avg));
+      if (response.data.ratings.avg !== 'NaN') {
+        if (isMounted) {
+          setStars(parseFloat(response.data.ratings.avg));
+          setLeft((parseFloat(response.data.ratings.avg) / 5) * 100)
+          setRight(100 - ((parseFloat(response.data.ratings.avg) / 5) * 100))
+        }
+      } else {
+        if(isMounted) {
+          setLeft(0);
+          setRight(100);
+        }
       }
     })
     return () => { isMounted = false }
   }, [current])
 
-  if (!styles || !product) return <div>loading...</div>
+
+  if (!styles || !product || !starRating || !leftPercentage || !rightPercentage) return <div>loading...</div>
 
   return (
     <div className="card">
       <img onClick={() => onRelatedProductClick(current)} src={styles.photos[0].thumbnail_url || 'https://www.escapeauthority.com/wp-content/uploads/2116/11/No-image-found.jpg'} style={{ height: "175px", width: '100%' }} />
       <Action changeAction={changeAction} product={product} />
       <div className="card-body" onClick={() => onRelatedProductClick(current)}>
-        <div className ="small">{product.category}</div>
-        <div className ="small"><strong>{product.name}</strong></div>
+        <div className="small">{product.category}</div>
+        <div className="small"><strong>{product.name}</strong></div>
         {!styles.sale_price && <p>{styles.original_price}</p>}
         {styles.sale_price && <p style={{ color: 'red' }}>{styles.sale_price}<s style={{ color: 'black' }}>{styles.original_price}</s></p>}
-        <StarRatings
-          rating={starRating}
-          numberOfStars={5}
-          starDimension="15px"
-          starSpacing="2px"
-          starRatedColor="black"
-          starEmptyColor= "grey"
+        <StarRating currentRating={starRating} leftPercentage={leftPercentage} rightPercentage={rightPercentage}
         />
       </div>
     </div>
