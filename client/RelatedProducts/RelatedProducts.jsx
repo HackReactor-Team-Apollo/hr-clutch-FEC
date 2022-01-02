@@ -6,15 +6,6 @@ import axios from 'axios';
 import ComparisonTable from './ComparisonTable.jsx';
 import AddToCompare from './AddToCompare.jsx';
 import RemoveFavorite from './RemoveFavorite.jsx';
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-  DotGroup
-} from "pure-react-carousel";
-import "pure-react-carousel/dist/react-carousel.es.css";
 
 class RelatedProducts extends React.Component {
   constructor(props) {
@@ -39,11 +30,11 @@ class RelatedProducts extends React.Component {
       })
   }
   changeComparisonOn(product) {
-    this.setState({ showComparison: true})
+    this.setState({ showComparison: true })
     this.setState({ currentRelatedComparison: product })
   }
   changeComparisonOff() {
-    this.setState({ showComparison: false})
+    this.setState({ showComparison: false })
   }
   componentDidMount() {
     this.getRelated()
@@ -78,71 +69,67 @@ class RelatedProducts extends React.Component {
         rItemsCompare
         <div className='relatedProducts'>
           <h2>Related Products</h2>
-          <div >{this.state.showComparison && <ComparisonTable currentProduct={this.props.product_id} product={this.state.currentRelatedComparison} changeComparisonOff ={this.changeComparisonOff}/>}</div>
-          <CarouselProvider
-            visibleSlides={5}
-            naturalSlideWidth={245}
-            naturalSlideHeight={500}
-            totalSlides={related.length}
-            isIntrinsicHeight={true}
-            dragEnabled={false}
-          >
-            <div className='carousel-container'>
-              <div className='carousel-gradient'>
-                <Slider>
-                  {related.map((currentRelated, i) => {
-                    return (
-                      <Slide>
-                        <Card key={i} current={currentRelated} onRelatedProductClick={this.props.onRelatedProductClick} Action={AddToCompare} changeAction={this.changeComparisonOn} />
-                      </Slide>
-                    );
-                  })}
-                </Slider>
-                {related.length > 5 &&
-                  <>
-                    <ButtonBack className="carousel-button-back">&lsaquo;</ButtonBack>
-                    <ButtonNext className="carousel-button-next">&rsaquo;</ButtonNext>
-                  </>}
-              </div>
+          <main>
+            <div >{this.state.showComparison && <ComparisonTable currentProduct={this.props.product_id} product={this.state.currentRelatedComparison} changeComparisonOff={this.changeComparisonOff} />}</div>
+
+
+            <span className='carousel-container'>
+              <span className='carousel-gradient'>
+                <span alt="left" id="slide-left" className="arrow">&#8592;</span>
+                {related.map((currentRelated, i) => {
+                  return (
+                    <Card key={i} current={currentRelated} onRelatedProductClick={this.props.onRelatedProductClick} Action={AddToCompare} changeAction={this.changeComparisonOn} />
+                  );
+                })}
+                <span alt="right" id="slide-right" className="arrow">&#8594;</span>
+              </span>
+            </span>
+            <div className="paddles">
+              <button className="left-paddle paddle hidden">
+              &#171;
+		</button>
+              <button className="right-paddle paddle">
+              &#187;
+              </button>
             </div>
-          </CarouselProvider>
+
+
+          </main>
         </div>
         <div className='favoriteProducts'>
+
           <h2>Your Outfit</h2>
-          <CarouselProvider
-            visibleSlides={4}
-            naturalSlideWidth={245}
-            naturalSlideHeight={500}
-            totalSlides={favorites.length}
-            isIntrinsicHeight={true}
-            dragEnabled={false}
-          >
-            <div className='carousel-container'>
-              <div className='carousel-gradient'>
-                <Slider>
-                  <div className='circle' onClick={this.addToFavorites}>
-                    <div>Add to Outfit</div>
-                    <div>&#43;</div>
-                  </div>
-                  {favorites.map((currentFavorite, i) => {
-                    return (
-                      <Slide>
-                        <Card key={i} current={currentFavorite} onRelatedProductClick={this.props.onRelatedProductClick} Action={RemoveFavorite} changeAction={this.removeFromFavorites} />
-                      </Slide>
-                    );
-                  })}
-                </Slider>
-                {favorites.length > 4 &&
+          <main>
+
+
+            <span className='carousel-container'>
+              <span className='carousel-gradient'><span alt="left" id="slide-left" className="arrow">&#8592;</span>
+                <span className='circle' onClick={this.addToFavorites}>
+                  <div>Add to Outfit</div>
+                  <div>&#43;</div>
+                </span>
+                {favorites.map((currentFavorite, i) => {
+                  return (
+                    <Card key={i} current={currentFavorite} onRelatedProductClick={this.props.onRelatedProductClick} Action={RemoveFavorite} changeAction={this.removeFromFavorites} />
+                  );
+                })}
+
+                {/* {favorites.length > 4 &&
                   <>
                     <ButtonBack className="carousel-button-back">&lsaquo;</ButtonBack>
                     <ButtonNext className="carousel-button-next">&rsaquo;</ButtonNext>
-                  </>}
-              </div>
-            </div>
-          </CarouselProvider>
+                  </>} */}
+                <span alt="right" id="slide-right" className="arrow">&#8594;</span>
+              </span>
+            </span>
+
+
+          </main>
         </div>
 
-      </div>
+
+
+      </div >
 
     )
   }

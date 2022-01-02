@@ -206,10 +206,12 @@
 
 .card {
   transition: 0.3s;
-  width: 90%;
+  width: 100%;
   border: 1px solid #ccc;
   margin: 10px;
-  position: relative;
+  flex: 2 0 21%;
+  max-width: 150px;
+  min-width: 150px;
 }
 .card-body {
   padding: 20px 10px;
@@ -243,56 +245,29 @@
 }
 
 .carousel-container {
-  position: relative;
+  /* position: relative;
   margin: 5px;
   max-height: auto;
-  padding: 5px;
+  padding: 5px; */
   /* overflow: hidden; */
-}
-
-.carousel-gradient {
-  height: 100%;
-  background: white;
-  padding: 2px;
-}
-.carousel-button-back {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  width: 64px;
-  height: 64px;
-  border-radius: 64px;
-  border: none;
-  font-size: 32px;
-  &[disabled] {
-    background: none;
-  }
-}
-.carousel-button-next {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  width: 64px;
-  height: 64px;
-  border-radius: 64px;
-  border: none;
-  font-size: 32px;
-  &[disabled] {
-    background: none;
-  }
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 .circle {
   margin: 10px;
   width: 150px;
   height: 150px;
   padding: 10px;
-  background: linear-gradient(135deg, #0099ff, #00c900);
+  background: white;
   border: 1px solid #ccc;
   color: #000;
   text-align: center;
   font: 32px Arial, sans-serif;
+  max-width: 150px;
+  min-width: 150px;
 }
 
 .comparison {
@@ -331,19 +306,56 @@ h2:after {
   font-size: 14px;
 }
 
-.comparisonModal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+.arrow {
+  width: 2rem;
+  font-size: 50px;
+  margin: 0 1rem;
+  display: inline-block;
+  float:left
 }
+
+.carousel-gradient {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  /* flex: 0 0 auto;
+  object-fit: cover;
+  margin: 5px;
+  transform: scale(.95); */
+}
+.carousel-gradient::-webkit-scrollbar {
+  display: none;
+}
+.paddle {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  width: 3em;
+}
+.left-paddle {
+  left: 0;
+}
+.right-paddle {
+  right: 0;
+}
+.hidden {
+  display: none;
+}
+
+.print {
+  margin: auto;
+  max-width: 500px;
+
+  span {
+    display: inline-block;
+    width: 100px;
+  }
+}
+
 
 /*###########################~~RATINGS AND REVIEWS~~################################*/
 .rateRev {
