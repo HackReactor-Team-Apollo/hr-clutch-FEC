@@ -13,16 +13,18 @@ class QuestionsAndAnswers extends React.Component {
     super(props)
     this.state = {
       currentPage: 1,
-      questionsPerLoad: 2,
-      questionArray: []
+      questionsPerLoad: 20,
+      questionArray: [],
+      questionsToLoad: 2
     }
+    this.getQuestions = this.getQuestions.bind(this)
     this.loadMoreQuestions = this.loadMoreQuestions.bind(this)
   }
   componentDidMount () {
     //Update state with api data
     //Render some number of QA elements
 
-    this.loadMoreQuestions()
+    this.getQuestions()
   }
   //Functional discussion
   /* HELPER FUNCTIONS */
@@ -33,6 +35,9 @@ class QuestionsAndAnswers extends React.Component {
   }
 
   loadMoreQuestions () {
+    this.setState({questionsToLoad: this.state.questionsToLoad + 2})
+  }
+  getQuestions () {
     //Populate 2 more question and answer elements
     //Call on load?
 
@@ -46,7 +51,7 @@ class QuestionsAndAnswers extends React.Component {
           { questionArray: this.state.questionArray.concat(res.data) })
       })
       .then(() => {
-        //console.log("LoadMoreQuestions Fired",this.state.currentPage)
+        //console.log("getQuestions Fired",this.state.currentPage)
         this.setState({currentPage:(this.state.currentPage+=1)})
       })
       .catch(err => {
@@ -55,30 +60,20 @@ class QuestionsAndAnswers extends React.Component {
       })
   }
 
-  submitAnswer () {
-    //pass answer input value to axios post request, then update question data
-  }
 
-  submitQuestion () {
-    //pass question input value to axios post request, then update question data
-  }
-
-  /****** QA Helpful/Report Functions ******/
-  //QuestionHelpful
-  //QuestionReport
-  //AnswerHelpful
-  //AnswerReport
   componentDidUpdate(prevProps) {
     if (this.props.product_id !== prevProps.product_id) {
-    this.setState({questionArray:[]}, this.loadMoreQuestions())
+    this.setState({questionArray:[]}, this.getQuestions())
     }
   }
   render () {
-    //console.log(this.state.questionArray, "console here")
+    let questionArray = [...this.state.questionArray]
+    let spliceCount = this.state.questionsToLoad
+    let remainderQuestions = questionArray.splice(this.state.questionsToLoad)
     return (
       <div className='QABodyWrapper'>
         <QuestionsAndAnswersHeader />
-        <QuestionAnswerBody questionArray={this.state.questionArray} />
+        <QuestionAnswerBody questionArray={questionArray} />
         <QuestionLoadAndAdd
           loadMoreQuestions={this.loadMoreQuestions}
           submitQuestion={this.submitQuestion}

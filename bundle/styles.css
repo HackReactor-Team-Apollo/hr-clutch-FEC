@@ -417,6 +417,7 @@ h2:after {
 .reviewlist {
   max-height: 520px;
   overflow: scroll;
+  overflow-x: hidden;
 }
 .sortedDiv {
   display: grid;

@@ -8,25 +8,11 @@ class QuestionAnswerBody extends React.Component {
       questionArray: this.props.questionArray,
       renderedQuestionWrappers: []
     }
-    this.parseQuestionArray = this.parseQuestionArray.bind(this)
   }
   componentDidMount () {
     //populate
     //console.log(this.state.questionArray)
 
-    setTimeout(this.parseQuestionArray.bind(this), 500) // TECH DEBT HERE
-  }
-  componentDidUpdate () {
-    //console.log(this.state.questionArray)
-  }
-  //Function to map out elements
-  parseQuestionArray () {
-    //console.log('ran parse q array')
-
-    // this.setState({ renderedQuestionWrappers: assembledQuestions })
-
-
-    // setTimeout(this.parseQuestionArray.bind(this), 5000)
   }
 
   render () {

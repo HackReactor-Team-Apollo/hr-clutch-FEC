@@ -6,7 +6,7 @@ class QuestionLoadAndAdd extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      product_id:this.props.product_id,
+      product_id: this.props.product_id,
       modalVisible: false,
       btnsVisible: true,
       usernameText: '',
@@ -30,7 +30,7 @@ class QuestionLoadAndAdd extends React.Component {
     this.setState({ [event.target.id]: event.target.value })
   }
   submitQuestion = () => {
-    let productID = this.state.product_id;
+    let productID = this.state.product_id
     let dataObj = {
       body: this.state.questionText,
       name: this.state.usernameText,
@@ -59,7 +59,8 @@ class QuestionLoadAndAdd extends React.Component {
         <button
           className={showHideClassName}
           onClick={this.props.loadMoreQuestions}
-        >Load More Questions
+        >
+          More Answered Questions
         </button>
         <QAModal
           show={this.state.modalVisible}
@@ -92,13 +93,13 @@ class QuestionLoadAndAdd extends React.Component {
             ></input>
           </form>
         </QAModal>
-        <button
-          type='button'
-          onClick={this.showModal}
-          className={showHideClassName}
-        >
-          Add New Question
-        </button>
+          <button
+            type='button'
+            onClick={this.showModal}
+            className={showHideClassName}
+          >
+            Add New Question +
+          </button>
       </div>
     )
   }

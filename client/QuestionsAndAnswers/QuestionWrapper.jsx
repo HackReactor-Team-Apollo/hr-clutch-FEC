@@ -53,7 +53,7 @@ class QuestionWrapper extends React.Component {
       answerArray.push(this.state.questionData.answers[element])
     })
     const finalAnswerArray = answerArray.slice(0, this.state.answerCount)
-    console.log(this.state.questionData)
+    //console.log(this.state.questionData)
     return (
       <div className='QAElementWrapper'>
         <div className='QuesElementWrapper'>

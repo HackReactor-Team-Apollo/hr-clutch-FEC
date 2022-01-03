@@ -17,6 +17,7 @@ class ReviewModalForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      product_id: this.props.product_id,
       summary: "",
       name: "",
       email: "",
@@ -182,7 +183,7 @@ class ReviewModalForm extends React.Component {
     if (this.props.characteristics !== undefined) {
 
       let reviewObj = {
-        product_id: this.props.product_id,
+        product_id: this.state.product_id,
         rating: this.state.rating,
         summary: this.state.summary,
         body: this.state.body,

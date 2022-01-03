@@ -17,7 +17,7 @@ class QuestionsAndAnswersHeader extends React.Component {
           <button className='QASearchButton' type='submit'>
             <img src={QASearchButtonIcon} />
           </button>
-          <input type='text' placeholder='Search Questions' className='QASearchField' />
+          <input type='text' placeholder='Have a question?  Search for answers...' className='QASearchField' />
 
           <button className='QASearchClear' type='reset'>
             <img src={QASearchClearIcon} />
