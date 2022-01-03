@@ -1,5 +1,4 @@
 import React from 'react'
-import '../../bundle/styles.css';
 
 class StarRating extends React.Component {
   constructor(props) {

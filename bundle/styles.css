@@ -213,7 +213,7 @@
   max-width: 160px;
   min-width: 160px;
   display: inline-block;
-
+  position: relative;
 }
 .card-body {
   padding: 20px 5px;
@@ -240,17 +240,11 @@
   background-repeat: repeat;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
   cursor: pointer;
+  display: inline-block;
 }
 
 .carousel-container {
-  /* position: relative;
-  margin: 5px;
-  max-height: auto;
-  padding: 5px; */
-  /* overflow: hidden; */
   max-width: 1000px;
   display: flex;
   justify-content: center;
@@ -272,6 +266,7 @@
   min-width: 150px;
   display: inline-block;
   padding: 50px 0 50px;
+  cursor: pointer;
 }
 
 .comparison {

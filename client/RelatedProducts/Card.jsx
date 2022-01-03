@@ -9,7 +9,7 @@ export default function Card({ current, onRelatedProductClick, Action, changeAct
   const [starRating, setStars] = useState(null);
   const [leftPercentage, setLeft] = useState(null);
   const [rightPercentage, setRight] = useState(null);
-
+  console.log(current)
   useEffect(() => {
     let isMounted = true;
     axios.get(`/products/${current}/styles`).then((response) => {
@@ -26,7 +26,7 @@ export default function Card({ current, onRelatedProductClick, Action, changeAct
           setRight(100 - ((parseFloat(response.data.ratings.avg) / 5) * 100))
         }
       } else {
-        if(isMounted) {
+        if (isMounted) {
           setLeft(0);
           setRight(100);
         }
@@ -34,7 +34,6 @@ export default function Card({ current, onRelatedProductClick, Action, changeAct
     })
     return () => { isMounted = false }
   }, [current])
-
 
   if (!styles || !product || !starRating || !leftPercentage || !rightPercentage) return <div>loading...</div>
 
