@@ -9,7 +9,6 @@ export default function Card({ current, onRelatedProductClick, Action, changeAct
   const [starRating, setStars] = useState(null);
   const [leftPercentage, setLeft] = useState(null);
   const [rightPercentage, setRight] = useState(null);
-  console.log(current)
   useEffect(() => {
     let isMounted = true;
     axios.get(`/products/${current}/styles`).then((response) => {

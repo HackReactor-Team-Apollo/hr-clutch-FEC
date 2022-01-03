@@ -56,7 +56,7 @@ export default function ComparisonTable({ currentProduct, product, changeCompari
           </tbody>
         </table>
         <br></br>
-        <button onClick={changeComparisonOff}>Close</button>
+        <button className ="closeButton" onClick={changeComparisonOff}>CLOSE</button>
     </div>
 
   )
