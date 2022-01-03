@@ -42,7 +42,7 @@ let getMetadata = function (request, callback) {
   axios
     .get(optionsURL, optionsConfig)
     .then(function (response) {
-      //console.log('metadata response:', response.data)
+
       for (var key in response.data.ratings) {
         let value = Number(response.data.ratings[key]);
         sum += value;

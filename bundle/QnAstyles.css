@@ -2,8 +2,6 @@
 
 .QABodyWrapper {
   background-color: rgb(255, 255, 255);
-  border: 1px solid grey;
-  border-radius: 5px;
   display: flex;
   flex-direction: column;
   margin: 10px;
@@ -67,8 +65,6 @@
 
 .QAElementWrapper {
   background-color: rgb(255, 255, 255);
-  border: 2px solid rgb(0, 89, 255);
-  border-radius: 5px;
   display: flex;
   flex-direction: column;
   margin: 2px;
@@ -76,15 +72,12 @@
 }
 .QuesElementWrapper {
   background-color: rgb(255, 255, 255);
-  border: 2px solid rgb(0, 89, 255);
-  border-radius: 2px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 .AnsElementWrapper {
   background-color: rgb(255, 255, 255);
-  border: 1px solid rgb(0, 89, 255);
-  border-radius: 5px;
   margin: 2px;
   display: flex;
   flex-direction: column;
@@ -96,6 +89,12 @@
   flex: 1;
   margin: 10px;
   font-size: 20px;
+}
+.QuestionUsernameText {
+  background-color: rgb(255, 255, 255);
+  flex: 1;
+  margin: 10px;
+  font-size: 22px;
   font-weight: bold;
 }
 .QAQHRWrapper {
@@ -106,7 +105,7 @@
   margin-bottom: 10px;
   margin-left: 10px;
   margin-right: 10px;
-  justify-content: flex-start;
+  justify-content:stretch;
 }
 
 .QAQHelpful {
@@ -147,6 +146,7 @@
   background-color: rgb(255, 255, 255);
   flex: 1;
   margin: 10px;
+  margin-left: 50px;
   font-weight: Bold;
   font-size: 16px;
 }
@@ -154,6 +154,7 @@
   background-color: rgb(255, 255, 255);
   flex: 1;
   margin: 10px;
+  margin-left: 50px;
   font-size: 16px;
 }
 .answerHeaderWrapper {
@@ -170,9 +171,9 @@
   flex-direction: row;
   flex-wrap: wrap;
   margin-bottom: 10px;
-  margin-left: 10px;
+  margin-left: 50px;
   margin-right: 10px;
-  justify-content: flex-start;
+  justify-content:stretch;
 }
 
 .QAAHelpful {

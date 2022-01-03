@@ -13,6 +13,7 @@ class ProductGallery extends React.Component {
     thumbnailPosition="left"
     showPlayButton={false}
     lazyLoad={true}
+    originalAlt={this.props.productMainInfo.description}
     />;
   }
 }

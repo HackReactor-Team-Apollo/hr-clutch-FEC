@@ -12,7 +12,7 @@ class QuestionsAndAnswersHeader extends React.Component {
   render () {
     return (
       <div>
-        <h4 className='QAHeader'> Questions and Answers </h4>
+        <h2 className='QAHeader'> Questions and Answers </h2>
         <div className='QASearchForm'>
           <button className='QASearchButton' type='submit'>
             <img src={QASearchButtonIcon} />

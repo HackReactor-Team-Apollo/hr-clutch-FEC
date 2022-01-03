@@ -68,6 +68,7 @@ class ProductBreakdown extends React.Component {
   render() {
     return (
       <>
+        <h4 style={{textAlign: 'center'}}>Product Breakdown</h4>
         {this.renderCharacteristics()}
       </>
     );

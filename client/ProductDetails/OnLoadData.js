@@ -289,6 +289,35 @@ for (let item in skuObj) {
         return skuArray
     }
 
+    let getStyleSkuInfo = function(productInfo, productID) {
+        // let skuArray = [];
+        // let productInfo = Object.entries(newData);
+        // let productDetails = productInfo[1];
+        // let productStyles = productDetails[1];
+        let skuObj = {};
+
+        // console.log("productDetails: ", productDetails)
+        // console.log("productStyles: ", productStyles)
+        productInfo.forEach(style => {
+            if (style.style_id === productID) {
+                skuObj = style;
+            }
+        })
+
+        for (let item in skuObj.skus) {
+        //     console.log("skuOBJ: ", skuObj);
+        //     console.log("ITEM: ", item);
+        //     console.log("SKU OBJ AT ITEM: ", skuObj[item])
+            skuArray.push({
+                        sku: item,
+                        quantity: skuObj.skus[item].quantity,
+                        sizes: skuObj.skus[item].size
+                    })
+                };
+                console.log("SKU ARRAY: ", skuArray)
+                return skuArray
+            }
+
 
 
 //PRODUCT DETAILS UTILITY FUNCTIONS
@@ -330,7 +359,8 @@ module.exports = {
     productMainInfo,
     skuArray,
     getSkuInfo,
-    sizeToQuantity
+    sizeToQuantity,
+    getStyleSkuInfo
 }
 
 //   module.exports.productSorter = productSorter;

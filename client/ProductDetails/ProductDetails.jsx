@@ -2,56 +2,35 @@
 //Import Library Dependencies
 import React from 'react'
 import {ProductGallery} from './ProductGallery.jsx'
-import {onloadState, productMainInfo, skuArray, getSkuInfo} from './OnLoadData.js'
+import {onloadState, productMainInfo, skuArray, getSkuInfo, getStyleSkuInfo} from './OnLoadData.js'
 import $ from 'jquery'
 import axios from 'axios'
+import {StarRating} from './starRatingBar.jsx'
 
 
-// let sizeToQuantity = function(currentSize) {
-//   let that = this;
-//   let maxQuantity = 0;
-//   let quantities = [];
-//   for (let i = 0; i < that.state.styleSkus.length; i++) {
-//       if (that.state.styleSkus[i].size === currentSize) {
-//           maxQuantity = that.state.styleSkus[i].quantity
-//       }
-//   }
-//   for (let i = 1; i <= maxQuantity; i++) {
-//       quantities.push(i)
-//   }
-
-
-//   return quantities
-// }
-
-// let getCurrentSize = function(newSku) {
-//   let currentSize = 0;
-//   for (let i = 0; i < this.styleSkus.length; i++) {
-//       if (newSku === this.styleSkus[i].sku) {
-//           currentSize = this.styleSkus[i].size
-//       }
-//   }
-//   return currentSize
-// }
 
 
 class ProductDetails extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      productMainInfo: productMainInfo,
+      productCatInfo: productMainInfo,
       productInfo: onloadState,
       currentStylePhotos: onloadState[0].style_photos,
       currentStyle: onloadState[0],
       styleSkus: [{quantity: 14, sizes: "7", sku: "1281202"}],
-      currentSku: 1,
+      currentQuantity: 1,
       currentSize: 7,
-      itemsInStock: [1, 2, 3, 4]
+      itemsInStock: [1, 2, 3, 4],
+      leftPercentage: 66,
+      rightPercentage: 33
   }
   this.componentDidMount = this.componentDidMount.bind(this)
   this.componentDidUpdate = this.componentDidUpdate.bind(this)
   this.handleChange = this.handleChange.bind(this)
+  this.getMetadata = this.getMetadata.bind(this)
 }
+
 
 componentDidMount() {
   let productID = this.props.product_id;
@@ -73,7 +52,6 @@ componentDidMount() {
   .catch(function(error) {
     console.log('ERROR FROM GET STYLES: ', error)
   })
-
 }
 
 
@@ -88,6 +66,7 @@ componentDidUpdate(prevProps) {
       }
     })
     .then(function(response) {
+      console.log('RESPONSE DATA: ', response.data)
       that.setState({
         productInfo: response.data,
         currentStylePhotos: response.data[0].style_photos,
@@ -102,40 +81,57 @@ componentDidUpdate(prevProps) {
 }
 
 
-handleChange(event) {
-  //console.log('EVENT TARGET VALUE: ', event.target.value)
-  let that = this;
-//   let sizeToQuantity = function(currentSize) {
-//     let maxQuantity = 0;
-//     let quantities = [];
-//     for (let i = 0; i < this.state.styleSkus.length; i++) {
-//         if (this.state.styleSkus[i].size === currentSize) {
-//             maxQuantity = this.state.styleSkus[i].quantity
-//         }
-//     }
-//     for (let i = 1; i <= maxQuantity; i++) {
-//         quantities.push(i)
-//     }
-//     return quantities
-// }
-let getCurrentSize = function(newSku) {
-  let currentSize = 0;
-  //console.log('NEW SKUUUUU: ', newSku);
-  //console.log('FUNCTION this.state.styleSkus: ', this.state)
-  for (let i = 0; i < this.state.styleSkus.length; i++) {
-      if (newSku === this.state.styleSkus[i].sku) {
-          currentSize = this.state.styleSkus[i].size
-      }
+  handleChange(event) {
+    let that = this;
+    that.setState({currentSize: event.target.value});
   }
-  return currentSize
-}
 
-let sizeToQuantity = function(currentSize) {
-  // let that = this;
+
+  getMetadata() {
+    let that = this;
+
+    axios.get(`/reviews/meta?product_id=${this.props.product_id}`)
+      .then(function (response) {
+        that.setState({
+          leftPercentage: response.data.ratings.avg * 20,
+          rightPercentage: 100 - response.data.ratings.avg * 20,
+        });
+      })
+      .catch(function (error) {
+        console.log("Metadata GET Error:", error);
+      });
+  }
+
+
+
+
+render() {
+  let skuArr = [];
+  let productCategory = this.props.productCatInfo.category;
+  let productName = this.props.productCatInfo.name;
+  let productSlogan = this.props.productCatInfo.slogan;
+  let productDescription = this.props.productCatInfo.description;
+  let productFeatures = this.props.productCatInfo.features;
+  let currentStylePhotos = this.state.currentStylePhotos;
+
+  //utility variables
+  let styleThumbnails = this.state.productInfo;
+  let productSize = this.state.currentSize;
+  let productSizeString = null;
+  let removeCents = this.state.productInfo[0].style_specs.original_price.length -3;
+  // let removeCents = priceIndexes -2
+
+
+  if (typeof productSize === "number") {
+    productSizeString = JSON.stringify(productSize)
+  } else {
+    productSizeString = productSize
+  }
+
   let maxQuantity = 0;
   let quantities = [];
   for (let i = 0; i < this.state.styleSkus.length; i++) {
-      if (this.state.styleSkus[i].size === currentSize) {
+    if (this.state.styleSkus[i].sizes === productSizeString) {
           maxQuantity = this.state.styleSkus[i].quantity
       }
   }
@@ -143,96 +139,51 @@ let sizeToQuantity = function(currentSize) {
       quantities.push(i)
   }
 
-
-  return quantities
-}
-
-let updatedSize = getCurrentSize(event.target.value)
-
-that.setState({
-  currentSku: event.target.value,
-  currentSize: updatedSize,
-  itemsInStock: sizeToQuantity(updatedSize)
-});
-}
-
-
-render() {
-  let skuArr = [];
-  let productCategory = this.state.productMainInfo.category;
-  let productName = this.state.productMainInfo.name;
-  let productSlogan = this.state.productMainInfo.slogan;
-  let productDescription = this.state.productMainInfo.description;
-  let productFeatures = this.state.productMainInfo.features;
-  let currentStylePhotos = this.state.currentStylePhotos;
-
-  //utility variables
-  let styleThumbnails = this.state.productInfo;
-  let entryList = Object.entries(this.state.currentStyle);
-  let skuObj = entryList[3][1];
-
-  //utility functions
-  for (let item in skuObj) {
-    //         console.log(item)
-            skuArr.push({
-                sku: item,
-                quantity: skuObj[item].quantity,
-                sizes: skuObj[item].size
-            })
-        };
-
-
-
-
-  //listing functions
+  //listing functions//
   let styleThumbnailCircles = styleThumbnails.map(style => {
-    return <img src={style.style_photos[0].thumbnail} className="selectStyle"></img>
+    let ID = style.style_id;
+    return <img src={style.style_photos[0].thumbnail} onClick={() => this.props.onStyleThumbnailClick(ID)} className="selectStyle"></img>
   });
 
   let featuresBullets = productFeatures.map(feature => {
-    return <li>{feature.feature}: {feature.value}</li>
+    return <div>&#10004;   {feature.feature}: {feature.value}</div>
   })
 
-  let styleSizeList = this.state.styleSkus.map(sku => {
-    return <option value={sku.sku}>{sku.sizes}</option>
+  let styleSizeList = this.state.styleSkus.map((sku, i) => {
+    return <option value={sku.sizes}>{sku.sizes}</option>
   })
-  let styleQuantityList = this.state.itemsInStock.map(quantitySelected => {
+  let styleQuantityList = quantities.map((quantitySelected, i) => {
     return <option value={quantitySelected}>{quantitySelected}</option>
   })
 
-  // console.log('SKU INFOOOOO: ', skuArr)
-
-  // let productSize = currentStyle.
-
-  // console.log('CURRENT STYLE: ', this.state.currentStyle)
-
-
-
-
 
 return (
-  <div className="overviewWrapper">overviewWrapper
+  <div className="overviewWrapper">
+
   <div className="overviewProductDescriptionContainer">
     <div className="overviewImageGallery">
-    <ProductGallery currentStylePhotos={currentStylePhotos} className="overviewImageGallery" />
+    <ProductGallery currentStylePhotos={currentStylePhotos} productMainInfo={this.props.productCatInfo} className="overviewImageGallery" />
     </div>
     <div className="overviewInformationContainer">
       <div className="overviewReviews">
-        overviewReviews
+      <StarRating leftPercentage={this.state.leftPercentage} rightPercentage={this.state.rightPercentage}/>
       </div>
       <div className="overviewNameAndCat">
-        <h4 className="category">{productCategory}</h4><br/>
-        <h2><strong>{productName}</strong></h2>
+        <h5>{productCategory}</h5>
+        <h1><strong>{productName}</strong></h1>
       </div>
+      <div className="price">${this.state.productInfo[0].style_specs.original_price.slice(0, removeCents)}</div>
       <div className="overviewStyle">
-      {styleThumbnailCircles}
+        <div><strong>STYLE >  </strong> {this.state.currentStyle.style_specs.name}</div>
+      <div>{styleThumbnailCircles}</div>
       </div>
       <div className="overviewSizeSelector">
-      <select className="btn selectSize" onChange={this.handleChange} value={this.state.currentSize}>
+      <select className="btn selectSize" onChange={this.handleChange}>
+      <option value="" disabled selected hidden>SELECT SIZE</option>
   {styleSizeList}
 </select>
-        {/*<button className="btn quantity">*/}{/*</button>*/}
-        <select className="quantity" >
+  <select className="btn quantity">
+  <option value="" disabled selected hidden>QUANTITY</option>
   {styleQuantityList}
 </select>
       </div>
@@ -241,10 +192,10 @@ return (
         <button className="btn star">STAR</button>
       </div>
     </div>
-  </div>
+    </div>
   <div className="overviewProductDescriptionContainer">
     <div className="overviewDescriptionText">
-      <h5 className="slogan">{productSlogan}</h5>
+      <h3 className="slogan">{productSlogan}</h3>
       <p className="productDescription">{productDescription}</p>
     </div>
     <div className="overviewDescriptionChecklist">
@@ -253,7 +204,7 @@ return (
       </ul>
     </div>
   </div>
-</div>
+  </div>
 )
 }
 }

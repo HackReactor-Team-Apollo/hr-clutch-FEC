@@ -5,13 +5,14 @@
   max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /*###########################~~HEADER~~################################*/
 .header {
-  background-color: rgb(244, 107, 3);
-  padding: 45px;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 25px;
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
@@ -19,18 +20,18 @@
 
 /*###########################~~BANNER~~################################*/
 .banner {
-  background-color: blanchedalmond;
+  background-color: rgb(255, 255, 255);
   padding: 5px;
   margin-bottom: 10px;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 /*###########################~~OVERVIEW~~################################*/
 .overviewWrapper {
   display: flex;
   flex-direction: column;
-  background-color: darkgrey;
+  background-color: rgb(255, 255, 255);
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -41,7 +42,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: crimson;
+  background-color: rgb(255, 255, 255);
   padding: 10px;
 }
 
@@ -51,7 +52,7 @@
   display: flex;
   flex-direction: column;
   flex: 1.5;
-  background-color: gold;
+  background-color: rgb(255, 255, 255);
   padding: 5px;
   padding-left: 15px;
   min-width: 380px;
@@ -59,36 +60,49 @@
 
 .overviewReviews {
   display: flex;
-  flex: 0.5;
-  background-color: rgb(255, 0, 140);
-  padding: 3px;
+  /* flex: 0.5; */
+  background-color: rgb(255, 255, 255);
 }
 
 .overviewNameAndCat {
   display: flex;
   flex-direction: column;
-  background-color: rgb(49, 245, 10);
-  padding: 3px;
+  align-items: flex-start;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: rgb(255, 255, 255);
+}
+
+.overviewNameAndCat h1 {
+  margin: 0;
+}
+.overviewNameAndCat h5 {
+  margin: 0;
+}
+
+.price {
+  padding-bottom: 15px;
 }
 
 .overviewStyle {
   display: flex;
-  flex: 2;
-  background-color: rgb(255, 0, 140);
+  flex-direction: column;
+  /* flex: 2; */
+  background-color: rgb(255, 255, 255);
   padding: 3px;
 }
 
 .overviewSizeSelector {
   display: flex;
-  flex: 1;
-  background-color: rgb(49, 245, 10);
+  /* flex: 1; */
+  background-color: rgb(255, 255, 255);
   padding: 3px;
 }
 
 .overviewBagAndStar {
   display: flex;
-  flex: 1;
-  background-color: rgb(255, 0, 140);
+  /* flex: 1; */
+  background-color: rgb(255, 255, 255);
   padding: 3px;
 }
 
@@ -111,22 +125,27 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: cornflowerblue;
+  background-color: rgb(255, 255, 255);
   padding: 10px;
 }
 
 .overviewDescriptionText {
   display: flex;
   flex: 2.5;
+  border-right: 1px solid;
+  padding-right: 10px;
   flex-direction: column;
-  background-color: rgb(255, 234, 0);
+  background-color: rgb(255, 255, 255);
 }
 
 .overviewDescriptionChecklist {
   display: flex;
   flex: 1.5;
   flex-direction: column;
-  background-color: rgb(30, 255, 0);
+  background-color: rgb(255, 255, 255);
+}
+.productFeatures div {
+  margin: 10px 0;
 }
 
 /*thumbnails*/
@@ -140,7 +159,6 @@
 
 /*buttons*/
 .selectSize {
-  /* display: block; */
   width: 65%;
   margin-right: 5%;
   padding-top: 15px;
@@ -150,7 +168,6 @@
 }
 
 .quantity {
-  /* display: block; */
   width: 30%;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -159,7 +176,6 @@
 }
 
 .addToBag {
-  /* display: block; */
   width: 75%;
   margin-right: 5%;
   padding-top: 15px;
@@ -169,7 +185,6 @@
 }
 
 .star {
-  /* display: block; */
   width: 20%;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -204,6 +219,7 @@
 }
 
 .card {
+  position: relative;
   transition: 0.3s;
   width: 100%;
   border: 1px solid #ccc;
@@ -249,7 +265,6 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-
 }
 .circle {
   margin: 10px;
@@ -275,7 +290,7 @@
   border: 1px solid #ccc;
   margin: 10px;
   position: relative;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .centerTable {
   margin-left: auto;
@@ -283,21 +298,21 @@
 }
 h2 {
   display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 h2:before,
 h2:after {
-    content: '';
-    border-top: 2px solid;
-    margin: 0 20px 0 0;
-    flex: 1 0 20px;
+  content: "";
+  border-top: 2px solid;
+  margin: 0 20px 0 0;
+  flex: 1 0 20px;
 }
 
 h2:after {
-    margin: 0 0 0 20px;
+  margin: 0 0 0 20px;
 }
 
 .small {
@@ -339,7 +354,8 @@ h2:after {
 .carousel-gradient-favorites::-webkit-scrollbar {
   display: none;
 }
-.prev, .next {
+.prev,
+.next {
   padding-top: 10px;
   padding-bottom: 10px;
   height: 100%;
@@ -355,12 +371,14 @@ h2:after {
 .prev {
   margin-right: 5px;
 }
-.prev:hover, .next:hover {
+.prev:hover,
+.next:hover {
   color: white;
   height: 100%;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
+<<<<<<< HEAD
 .closeButton {
   max-height: 55px;
   padding-top: 15px;
@@ -369,6 +387,8 @@ h2:after {
   width: 65%;
 }
 
+=======
+>>>>>>> bd5489e274a22cc7d5c45f93834f88901417199a
 /*###########################~~RATINGS AND REVIEWS~~################################*/
 .rateRev {
   /* background-color: rgb(243, 8, 192); */
@@ -396,12 +416,10 @@ h2:after {
   flex-wrap: wrap;
   margin: 10px;
   flex: 3;
-
 }
 .reviewlist {
   max-height: 520px;
   overflow: scroll;
-
 }
 .sortedDiv {
   display: grid;
@@ -412,7 +430,6 @@ h2:after {
 #sorted {
   grid-column: 1;
   font-size: small;
-
 }
 
 .sorterdropdown {
@@ -437,7 +454,6 @@ h2:after {
   border-bottom-style: solid;
   border-bottom-width: 1px;
   height: 250px;
-
 }
 .reviewrating {
   grid-column: 1;
@@ -448,7 +464,6 @@ h2:after {
   grid-row: 1;
   text-align: right;
   font-size: small;
-
 }
 .ratingdate {
   grid-column: 6;
@@ -502,7 +517,6 @@ h2:after {
 .helpfulSpan {
   grid-column: 1;
   grid-row: 1;
-
 }
 .reviewImage {
   max-height: 50px;
@@ -511,12 +525,9 @@ h2:after {
   margin-right: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
-
 }
 
-
 .ratingimages {
-
   grid-row: 6;
 }
 .helpfulReview:hover {
@@ -548,10 +559,12 @@ h2:after {
 .ReviewsButtons {
   grid-column: 4;
   grid-row: 1;
+  height: 55px;
 }
 .MoreReviewsButtons {
   grid-column: 2;
   grid-row: 1;
+  height: 55px;
 }
 .MoreReviewsButtons:hover {
   cursor: pointer;
@@ -593,11 +606,8 @@ h2:after {
 .ReviewModalExit {
   height: 20px;
 
-
   grid-column: 3;
   grid-row: 1;
-
-
 }
 .ReviewModalExit:hover {
   cursor: pointer;
@@ -620,7 +630,6 @@ h2:after {
 .uploads {
   max-height: 100px;
   max-width: 100px;
-
 }
 
 .mainmodalform {
@@ -637,18 +646,21 @@ h2:after {
 .nicknamereviewinput {
   grid-column: 2 / span 2;
   grid-row: 1;
-  height: 30px;
+  width: 80%;
+  margin-bottom: 10px;
 }
 .emailspan {
   grid-column: 1;
   grid-row: 2;
   margin-top: 10px;
-  margin-bottom: 10px;
 }
 .emailreviewinput {
   grid-column: 2 / span 2;
   grid-row: 2;
-  height: 30px;
+  width: 80%;
+}
+.headsup {
+  font-size: x-small;
 }
 .overallratingspan {
   grid-column: 1;
@@ -684,7 +696,6 @@ h2:after {
 .starchoosetwo:hover {
   cursor: pointer;
   /* font-size: medium; */
-
 }
 .starchoosethree:hover {
   cursor: pointer;
@@ -702,38 +713,34 @@ h2:after {
   grid-column: 2;
   grid-row: 3;
   margin: auto;
-
 }
 .startaker:hover {
-
   cursor: pointer;
-
 }
 .reviewrecommendspan {
   grid-column: 1 / span 2;
   grid-row: 4;
   margin-top: 10px;
-
 }
 .yesradio {
   grid-column: 3;
-  grid-row: 4;
+  grid-row: 5;
   margin: auto;
 }
 .noradio {
   grid-column: 4;
-  grid-row: 4;
+  grid-row: 5;
   margin: auto;
 }
 .yesspan {
   grid-column: 3;
-  grid-row: 5;
+  grid-row: 4;
   font-size: small;
   margin: auto;
 }
 .nospan {
   grid-column: 4;
-  grid-row: 5;
+  grid-row: 4;
   font-size: small;
   margin: auto;
 }
@@ -746,12 +753,10 @@ h2:after {
   display: grid;
   grid-template-columns: 100px 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
-
 }
 .starRatings:hover {
   cursor: pointer;
   /* background-color: black; */
-
 }
 
 .imageuploaddiv {
@@ -761,7 +766,7 @@ h2:after {
   border-top-width: 1px;
   padding-bottom: 10px;
   grid-template-columns: auto auto;
-  grid-template-rows: auto auto ;
+  grid-template-rows: auto auto;
 }
 #selectimage {
   grid-row: 1;
@@ -842,14 +847,12 @@ h2:after {
   grid-template-columns: auto auto;
   text-align: center;
   vertical-align: top;
-
 }
 .bigNumber {
   font-size: xxx-large;
   font-weight: bold;
 }
 .starratedspan {
-  background: linear-gradient(to right, black 90%, lightgray 10%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -880,19 +883,19 @@ h2:after {
 
 #ratingbutton:hover {
   cursor: pointer;
-  color: lightskyblue
+  color: lightskyblue;
 }
 
 #ratingprog {
   grid-column: 2 / span 4;
   vertical-align: auto;
-
 }
 /*###########################~~FOOTER~~################################*/
 .footer {
-  background-color: rgb(236, 252, 5);
+  background-color: rgb(0, 0, 0);
+  color: white;
   padding: 25px;
   margin-bottom: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }

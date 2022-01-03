@@ -95,18 +95,18 @@ class ReviewModalForm extends React.Component {
 
       return characteristicsKeys.map((key, i) => (
         <div className="radiocharbuttons">
-          <span style={{gridColumn: 1, gridRow: (2 * i) + 1}}>{key}:</span>
-          <input name={key} value={1} type="radio" onChange={this.handleRadioChange} style={{gridColumn: 2, gridRow: (2 * i) + 1, margin: 'auto'}}/>
-          <input name={key} value={2}  type="radio" onChange={this.handleRadioChange} style={{gridColumn: 3, gridRow: (2 * i) + 1, margin: 'auto'}} />
-          <input name={key} value={3}  type="radio" onChange={this.handleRadioChange} style={{gridColumn: 4, gridRow: (2 * i) + 1, margin: 'auto'}} />
-          <input name={key} value={4}  type="radio" onChange={this.handleRadioChange} style={{gridColumn: 5, gridRow: (2 * i) + 1, margin: 'auto'}}/>
-          <input name={key} value={5}  type="radio" onChange={this.handleRadioChange} style={{gridColumn: 6, gridRow: (2 * i) + 1, margin: 'auto'}} />
+          <span key={key + 'initial'} style={{gridColumn: 1, gridRow: (2 * i) + 2, fontSize: 'small'}}>{key}:</span>
+          <input key={key + 'one'} name={key} value={1} type="radio" onChange={this.handleRadioChange} style={{gridColumn: 2, gridRow: (2 * i) + 2, margin: 'auto'}}/>
+          <input key={key + 'two'} name={key} value={2}  type="radio" onChange={this.handleRadioChange} style={{gridColumn: 3, gridRow: (2 * i) + 2, margin: 'auto'}} />
+          <input key={key + 'three'} name={key} value={3}  type="radio" onChange={this.handleRadioChange} style={{gridColumn: 4, gridRow: (2 * i) + 2, margin: 'auto'}} />
+          <input key={key + 'four'} name={key} value={4}  type="radio" onChange={this.handleRadioChange} style={{gridColumn: 5, gridRow: (2 * i) + 2, margin: 'auto'}}/>
+          <input key={key + 'five'} name={key} value={5}  type="radio" onChange={this.handleRadioChange} style={{gridColumn: 6, gridRow: (2 * i) + 2, margin: 'auto'}} />
 
-          <span style={{gridColumn: 6, gridRow: (2 * i) + 2, fontSize: 'small', margin: 'auto'}}>{characteristicOptions[key]["5"]}</span>
-          <span style={{gridColumn: 2, gridRow: (2 * i) + 2, fontSize: 'small', margin: 'auto'}}>{characteristicOptions[key]["1"]}</span>
-          <span style={{gridColumn: 3, gridRow: (2 * i) + 2, fontSize: 'small', margin: 'auto'}}>2</span>
-          <span style={{gridColumn: 4, gridRow: (2 * i) + 2, fontSize: 'small', margin: 'auto'}}>3</span>
-          <span style={{gridColumn: 5, gridRow: (2 * i) + 2, fontSize: 'small', margin: 'auto'}}>4</span>
+          <span style={{gridColumn: 6, gridRow: (2 * i) + 1, fontSize: 'small', margin: 'auto'}}>{characteristicOptions[key]["5"]}</span>
+          <span style={{gridColumn: 2, gridRow: (2 * i) + 1, fontSize: 'small', margin: 'auto'}}>{characteristicOptions[key]["1"]}</span>
+          <span style={{gridColumn: 3, gridRow: (2 * i) + 1, fontSize: 'small', margin: 'auto'}}>2</span>
+          <span style={{gridColumn: 4, gridRow: (2 * i) + 1, fontSize: 'small', margin: 'auto'}}>3</span>
+          <span style={{gridColumn: 5, gridRow: (2 * i) + 1, fontSize: 'small', margin: 'auto'}}>4</span>
 
         <br></br>
         </div>
@@ -232,27 +232,34 @@ class ReviewModalForm extends React.Component {
           <div className="mainmodalform">
 
               <span className="nicknamelabel"> What is your nickname: *</span>
+              <div className="nicknamereviewinput">
               <input
                 type="text"
                 name="name"
                 maxLength="60"
                 placeholder="Example: jackson11!"
-                className="nicknamereviewinput"
+
                 onChange={this.onChange}
               />
+              <div className="headsup">For privacy reasons, do not use your full name or email address</div>
+              </div>
               <br></br>
               <br></br>
 
 
               <span className="emailspan"> Your email: *</span>
-              <input
-                type="text"
-                name="email"
-                maxLength="60"
-                placeholder="Example: jackson11@email.com"
-                className="emailreviewinput"
-                onChange={this.onChange}
-              />
+              <div className="emailreviewinput">
+                <input
+                  type="text"
+                  name="email"
+                  maxLength="60"
+                  placeholder="Example: jackson11@email.com"
+                  className="emailreviewinput"
+                  onChange={this.onChange}
+                />
+                <div className="headsup">For authentication reasons, you will not be emailed</div>
+
+              </div>
               <br></br>
               <br></br>
 
