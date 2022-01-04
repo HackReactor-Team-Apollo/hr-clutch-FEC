@@ -93,7 +93,7 @@ class RelatedProducts extends React.Component {
         <div className='relatedProducts'>
           <h2>Related Products</h2>
           <main>
-            <div >{this.state.showComparison && <ComparisonTable currentProduct={this.props.product_id} product={this.state.currentRelatedComparison} changeComparisonOff={this.changeComparisonOff} />}</div>
+
             <span className='carousel-container'>
               {scrolled > 0 && <a className="prev" onClick={this.scroll.bind(null, -1)}>&#10094;</a>}
               <span className='carousel-gradient'>
@@ -109,6 +109,7 @@ class RelatedProducts extends React.Component {
                   {scrolled + 5 < related.length && <a className="next" onClick={this.scroll.bind(null, 1)}>&#10095;</a>}
                 </>}
             </span>
+            <div>{this.state.showComparison && <ComparisonTable currentProduct={this.props.product_id} product={this.state.currentRelatedComparison} changeComparisonOff={this.changeComparisonOff} />}</div>
           </main>
         </div>
         <div className='favoriteProducts'>

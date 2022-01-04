@@ -29,7 +29,7 @@ export default function ComparisonTable({ currentProduct, product, changeCompari
   }
   return (
     <div className='comparison'>
-        <h1>Comparing</h1>
+        <div>Comparing</div>
         <table className="centerTable">
           <tbody>
             <tr>
