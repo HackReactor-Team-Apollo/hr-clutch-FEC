@@ -37,31 +37,31 @@ class RatingsBreakdown extends React.Component {
         <div className="ratingBreakdown">
           <button name ="fivereviews" value="showFive" onClick={this.props.click} id="ratingbutton" >5 stars</button>
 
-          <RatingsProgressbar bgcolor="orange" progress={this.props.ratings["5"]}  height={this.props.ratings["5"]} />
+          <RatingsProgressbar bgcolor="orange" progress={this.props.ratings["5"]}  height={this.props.ratings["5"]} /><span style={{fontSize: 'small'}} className="ratingCountSpan"> ({this.props.fiveratingCount})</span>
         </div>
 
         <div className="ratingBreakdown">
           <button name ="fourreviews" value="showFour" onClick={this.props.click} id="ratingbutton">4 stars</button>
 
-          <RatingsProgressbar bgcolor="orange" progress={this.props.ratings["4"]}  height={this.props.ratings["4"]} />
+          <RatingsProgressbar bgcolor="orange" progress={this.props.ratings["4"]}  height={this.props.ratings["4"]} /><span style={{fontSize: 'small'}} className="ratingCountSpan"> ({this.props.fourratingCount})</span>
         </div>
 
         <div className="ratingBreakdown">
           <button name ="threereviews" value="showThree" onClick={this.props.click} id="ratingbutton">3 stars</button>
 
-          <RatingsProgressbar bgcolor="orange" progress={this.props.ratings["3"]}  height={this.props.ratings["3"]} />
+          <RatingsProgressbar bgcolor="orange" progress={this.props.ratings["3"]}  height={this.props.ratings["3"]} /><span style={{fontSize: 'small'}} className="ratingCountSpan"> ({this.props.threeratingCount})</span>
         </div>
 
         <div className="ratingBreakdown">
           <button name ="tworeviews" value="showTwo" onClick={this.props.click} id="ratingbutton">2 stars</button>
 
-          <RatingsProgressbar bgcolor="orange" progress={this.props.ratings["2"]}  height={this.props.ratings["2"]} />
+          <RatingsProgressbar bgcolor="orange" progress={this.props.ratings["2"]}  height={this.props.ratings["2"]} /><span style={{fontSize: 'small'}} className="ratingCountSpan"> ({this.props.tworatingCount})</span>
         </div>
 
         <div className="ratingBreakdown">
           <button name ="onereviews" value="showOne" onClick={this.props.click} id="ratingbutton">1 stars</button>
 
-          <RatingsProgressbar bgcolor="orange" progress={this.props.ratings["1"]}  height={this.props.ratings["1"]} />
+          <RatingsProgressbar bgcolor="orange" progress={this.props.ratings["1"]}  height={this.props.ratings["1"]} /><span style={{fontSize: 'small'}} className="ratingCountSpan"> ({this.props.oneratingCount})</span>
         </div>
         <br></br>
 

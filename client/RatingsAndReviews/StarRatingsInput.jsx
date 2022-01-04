@@ -52,7 +52,7 @@ class StarRatingsInput extends React.Component {
           <span className="starchoosetwo" name="twostar" onClick={this.handleClick}>&#9733; </span>
           <span className="starchoosethree" name="threestar" onClick={this.handleClick}>&#9733; </span>
           <span className="starchoosefour" name="fourstar" onClick={this.handleClick}>&#9733; </span>
-          <span className="starchoosefive" name="fivestar" onClick={this.handleClick}>&#9733; </span><span>  5 Stars - very satisfied</span>
+          <span className="starchoosefive" name="fivestar" onClick={this.handleClick}>&#9733; </span><span>  Great</span>
         </>
       );
     }
@@ -64,7 +64,7 @@ class StarRatingsInput extends React.Component {
           <span className="starchoosetwo" name="twostar" onClick={this.handleClick}>&#9733; </span>
           <span className="starchoosethree" name="threestar" onClick={this.handleClick}>&#9733; </span>
           <span className="starchoosefour" name="fourstar" onClick={this.handleClick}>&#9733; </span>
-          <span className="starchoosefive" name="fivestar" onClick={this.handleClick}>&#9734; </span><span>  4 Stars - satisfied</span>
+          <span className="starchoosefive" name="fivestar" onClick={this.handleClick}>&#9734; </span><span>  Good</span>
         </>
       );
     }
@@ -76,7 +76,7 @@ class StarRatingsInput extends React.Component {
           <span className="starchoosetwo" name="twostar" onClick={this.handleClick}>&#9733; </span>
           <span className="starchoosethree" name="threestar" onClick={this.handleClick}>&#9733; </span>
           <span className="starchoosefour" name="fourstar" onClick={this.handleClick}>&#9734; </span>
-          <span className="starchoosefive" name="fivestar" onClick={this.handleClick}>&#9734; </span> <span>  3 Stars - neutral</span>
+          <span className="starchoosefive" name="fivestar" onClick={this.handleClick}>&#9734; </span> <span>  Average</span>
         </>
       );
     }
@@ -88,7 +88,7 @@ class StarRatingsInput extends React.Component {
           <span className="starchoosetwo" name="twostar" onClick={this.handleClick}>&#9733; </span>
           <span className="starchoosethree" name="threestar" onClick={this.handleClick}>&#9734; </span>
           <span className="starchoosefour" name="fourstar" onClick={this.handleClick}>&#9734; </span>
-          <span className="starchoosefive" name="fivestar" onClick={this.handleClick}>&#9734; </span> <span>  2 Stars - dissatisfied</span>
+          <span className="starchoosefive" name="fivestar" onClick={this.handleClick}>&#9734; </span> <span>  Fair</span>
         </>
       );
     }
@@ -101,7 +101,7 @@ class StarRatingsInput extends React.Component {
           <span className="starchoosetwo" name="twostar" onClick={this.handleClick}>&#9734; </span>
           <span className="starchoosethree" name="threestar" onClick={this.handleClick}>&#9734; </span>
           <span className="starchoosefour" name="fourstar" onClick={this.handleClick}>&#9734; </span>
-          <span className="starchoosefive" name="fivestar" onClick={this.handleClick}>&#9734; </span> <span>  1 Stars - very dissatisfied</span>
+          <span className="starchoosefive" name="fivestar" onClick={this.handleClick}>&#9734; </span> <span>  Poor</span>
         </>
         );
       }

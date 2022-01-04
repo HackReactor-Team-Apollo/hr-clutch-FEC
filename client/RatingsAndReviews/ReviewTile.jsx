@@ -14,12 +14,17 @@ class ReviewTile extends React.Component {
     super(props);
     this.state = {
       review_id: this.props.review.review_id,
-      marked: false
+      marked: false,
+      showingAll: false
     };
-    this.renderOverallRating=this.renderOverallRating.bind(this);
+    this.renderOverallRating = this.renderOverallRating.bind(this);
+    this.showMore = this.showMore.bind(this);
+    this.showAllBody = this.showAllBody.bind(this);
   }
   convertTime(milliseconds) {
+    console.log(this.props.review.date.slice(0, 10))
     let date = new Date(milliseconds);
+    console.log(date);
     let modifiedDate = date.toString().split(" ");
     modifiedDate.shift();
     modifiedDate.splice(2, 0, ", ");
@@ -79,6 +84,36 @@ class ReviewTile extends React.Component {
       )
     }
   }
+  showAllBody() {
+
+    let that = this;
+    let expandBody = () => {
+      return new Promise(function (resolve, reject) {
+        that.setState({showingAll: true}, function (error, result) {
+          if (error) {
+            reject(error);
+          } else {
+            resolve (result);
+          }
+        });
+      });
+    };
+    expandBody()
+        .then(function(result) {
+          that.showMore();
+        })
+        .catch(function(error) {
+          console.log('Show all body Error:', error);
+        });
+  }
+  showMore() {
+    if (this.props.review.body.length > 250 && this.state.showingAll === false) {
+      return ( <div className="ratingbody">{this.props.review.body.slice(0, 251)}<span className="showmore" onClick={this.showAllBody}> ...show more</span></div> );
+    } else {
+      return (<div className="ratingbody">{this.props.review.body}</div>)
+    }
+
+  }
   render() {
     return (
       <>
@@ -86,10 +121,10 @@ class ReviewTile extends React.Component {
           <div className="reviewrating">{this.renderOverallRating()}</div>
           <div className="ratinguser">{this.props.review.reviewer_name},</div>
           <div className="ratingdate">
-            {this.convertTime(Date.parse(this.props.review.date))}
+            {this.convertTime(Date.parse(this.props.review.date.slice(0, 10)))}
           </div>
           <div className="ratingsummary">{this.props.review.summary}</div>
-          <div className="ratingbody">{this.props.review.body}</div>
+          {this.showMore()}
           {this.isRecommended(this.props.review)}
           <div className="helpfuldiv"><span className="helpfulspan">Helpful?</span>
           <div onClick={this.markHelpful.bind(this)} className="helpfulReview">Yes({this.props.review.helpfulness})</div>

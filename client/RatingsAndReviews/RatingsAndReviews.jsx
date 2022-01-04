@@ -23,6 +23,7 @@ class RatingsAndReviews extends React.Component {
       ratings: {},
       recommendedPercentage: 0,
       ratingsCount: 0,
+      numberCount: 0,
       characteristics: {},
       sort: "relevant",
 
@@ -41,6 +42,8 @@ class RatingsAndReviews extends React.Component {
     this.getCurrentProductInfo = this.getCurrentProductInfo.bind(this);
     this.onClick = this.onClick.bind(this);
     this.filterReviews = this.filterReviews.bind(this);
+    this.showFilters = this.showFilters.bind(this);
+    this.triggerRemoval = this.triggerRemoval.bind(this);
   }
   getCurrentProductInfo() {
     let that = this;
@@ -61,11 +64,13 @@ class RatingsAndReviews extends React.Component {
     axios
       .get(`/reviews/meta?product_id=${this.props.product_id}`)
       .then(function (response) {
+        console.log('get meta response: ', response.data);
         that.setState({
           ratings: response.data.ratings,
           recommendedPercentage: response.data.recommended,
           ratingsCount: response.data.ratings.ratingsCount,
           characteristics: response.data.characteristics,
+          numberCount: response.data.ratingCount
         });
       })
       .catch(function (error) {
@@ -171,6 +176,12 @@ class RatingsAndReviews extends React.Component {
         .then(function(result) {
           that.getReviews();
         })
+        .then(function(result) {
+          that.showFilters();
+        })
+        .then(function(result) {
+          that.removeButton();
+        })
         .catch(function(error) {
           console.log('Add Filter Error:', error);
         });
@@ -179,6 +190,12 @@ class RatingsAndReviews extends React.Component {
       removeFilter()
         .then(function(result) {
           that.getReviews();
+        })
+        .then(function(result) {
+          that.showFilters();
+        })
+        .then(function(result) {
+          that.removeButton();
         })
         .catch(function(error) {
           console.log('Remove Filter Error:', error);
@@ -225,6 +242,54 @@ class RatingsAndReviews extends React.Component {
     return filteredArray;
 
   }
+  showFilters () {
+    if (this.state.showOne !== false || this.state.showTwo !== false || this.state.showThree !== false || this.state.showFour !== false || this.state.showFive !== false) {
+      let showingArr = ['showOne', 'showTwo', 'showThree', 'showFour', 'showFive'];
+     return showingArr.map((shownumber, i) => {
+        if (this.state[shownumber] === true) {
+         return ( <span style={{fontSize: 'small'}}>| {i + 1} |</span> )
+        }
+      })
+    }
+  }
+  removeButton() {
+    if (this.state.showOne !== false || this.state.showTwo !== false || this.state.showThree !== false || this.state.showFour !== false || this.state.showFive !== false) {
+      return (
+        <button className="removeFilters" onClick={this.triggerRemoval}>Remove Filters</button>
+      )
+    }
+  }
+  triggerRemoval() {
+    let that = this;
+    let showingObj = {
+      showOne: false,
+      showTwo: false,
+      showThree: false,
+      showFour: false,
+      showFive: false
+    }
+    let removeAllFilters = () => {
+      return new Promise(function (resolve, reject) {
+        that.setState(showingObj, function (error, result) {
+          if (error) {
+            reject(error);
+          } else {
+            resolve (result);
+          }
+        });
+      });
+    };
+    removeAllFilters()
+        .then(function(result) {
+          that.getReviews();
+        })
+        .then(function (result) {
+          that.showFilters();
+        })
+        .catch(function(error) {
+          console.log('Remove All Filters Error:', error);
+        });
+  }
   showModal() {
     this.setState({ show: true });
   }
@@ -244,9 +309,17 @@ class RatingsAndReviews extends React.Component {
             recommended={this.state.recommendedPercentage}
             ratingsCount={this.state.ratingsCount}
             getReviews={this.getReviews}
+            oneratingCount={this.state.numberCount['1']}
+            tworatingCount={this.state.numberCount['2']}
+            threeratingCount={this.state.numberCount['3']}
+            fourratingCount={this.state.numberCount['4']}
+            fiveratingCount={this.state.numberCount['5']}
 
             click={this.onClick}
           />
+          <span  style={{fontSize: 'small'}}>Filters Applied: </span>{this.showFilters()}
+          <br></br>
+          {this.removeButton()}
           <ProductBreakdown characteristics={this.state.characteristics} />
         </div>
         <div className="reviews">

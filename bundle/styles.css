@@ -18,34 +18,6 @@
   justify-content: space-between;
 }
 
-.searchWrapper {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  min-width: 100px;
-}
-
-.searchMain {
-  border-bottom: 2px solid rgb(255, 255, 255);
-  height: 30px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  color: white;
-  width: 100%;
-  padding: 2px 23px 2px 30px;
-  outline: 0;
-  background-color: #000000;
-  margin-left: 1px;
-  margin-right: 1px;
-  font-size: 18px;
-}
-
-.fa-search {
-  color: white;
-  height: 30px;
-}
-
 /*###########################~~BANNER~~################################*/
 .banner {
   background-color: rgb(255, 255, 255);
@@ -487,7 +459,15 @@ h2:after {
   padding-bottom: 10px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  height: 250px;
+  max-height: 300px;
+}
+.showmore {
+  font-size: small;
+  font-weight: bold;
+}
+.showmore:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 .reviewrating {
   grid-column: 1;
@@ -896,7 +876,7 @@ h2:after {
 }
 .ratingBreakdown {
   display: grid;
-  grid-template-columns: 25% auto auto auto auto;
+  grid-template-columns: 25% auto auto auto auto auto;
   min-height: 45px;
   grid-template-rows: auto;
   align-items: center;
@@ -915,6 +895,10 @@ h2:after {
   padding: 0px;
 }
 
+.ratingCountSpan {
+  grid-column: 6;
+  margin: auto;
+}
 #ratingbutton:hover {
   cursor: pointer;
   color: lightskyblue;

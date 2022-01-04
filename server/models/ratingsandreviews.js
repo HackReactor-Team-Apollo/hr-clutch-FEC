@@ -45,10 +45,23 @@ let getMetadata = function (request, callback) {
 
       for (var key in response.data.ratings) {
         let value = Number(response.data.ratings[key]);
+
         sum += value;
         ratingSum += Number(key) * value;
       }
-
+      let ratingCount = {
+        1: Number(response.data.ratings["1"]),
+        2: Number(response.data.ratings["2"]),
+        3: Number(response.data.ratings["3"]),
+        4: Number(response.data.ratings["4"]),
+        5: Number(response.data.ratings["5"])
+      };
+      for (var key in ratingCount) {
+        if(Number.isNaN(ratingCount[key])) {
+          ratingCount[key] = 0;
+        }
+      }
+      response.data.ratingCount = ratingCount;
       let ratingsPercentages = {
         ratingsCount: sum,
         avg: (ratingSum / sum).toFixed(1),

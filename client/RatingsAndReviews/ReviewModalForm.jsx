@@ -45,6 +45,7 @@ class ReviewModalForm extends React.Component {
     this.changeRating = this.changeRating.bind(this);
     this.incrementCount = this.incrementCount.bind(this);
     this.captureRating = this.captureRating.bind(this);
+    this.renderSelected = this.renderSelected.bind(this);
   }
   renderCharacteristicRadioButtons(characteristicsKeys) {
     if (characteristicsKeys.length !== undefined) {
@@ -96,7 +97,8 @@ class ReviewModalForm extends React.Component {
 
       return characteristicsKeys.map((key, i) => (
         <div className="radiocharbuttons">
-          <span key={key + 'initial'} style={{gridColumn: 1, gridRow: (2 * i) + 2, fontSize: 'small'}}>{key}:</span>
+          <span key={key + 'initial'} style={{gridColumn: 1, gridRow: (2 * i) + 1, fontSize: 'small'}}>{key}:</span>
+          <div style={{gridColumn: 1, gridRow: (2 * i) + 2, margin: 'auto'}}>{this.renderSelected(key, characteristicOptions[key])}</div>
           <input key={key + 'one'} name={key} value={1} type="radio" onChange={this.handleRadioChange} style={{gridColumn: 2, gridRow: (2 * i) + 2, margin: 'auto'}}/>
           <input key={key + 'two'} name={key} value={2}  type="radio" onChange={this.handleRadioChange} style={{gridColumn: 3, gridRow: (2 * i) + 2, margin: 'auto'}} />
           <input key={key + 'three'} name={key} value={3}  type="radio" onChange={this.handleRadioChange} style={{gridColumn: 4, gridRow: (2 * i) + 2, margin: 'auto'}} />
@@ -126,7 +128,81 @@ class ReviewModalForm extends React.Component {
     this.changeValue(e.target.name, e.target.value);
   }
   changeValue(name, newValue) {
-    this.setState({[name]: newValue});
+    let that = this;
+    let characteristicOptions = {
+      Size: {
+        1: "A size too small",
+        2: `${1 / 2} a size too small`,
+        3: "Perfect",
+        4: `${1 / 2} a size too big`,
+        5: "A size too wide",
+      },
+      Width: {
+        1: "Too narrow",
+        2: "Slightly narrow",
+        3: "Perfect",
+        4: "Slightly wide",
+        5: "Too wide",
+      },
+      Comfort: {
+        1: "Uncomfortable",
+        2: "Slightly uncomfortable",
+        3: "Ok",
+        4: "Comfortable",
+        5: "Perfect",
+      },
+      Quality: {
+        1: "Poor",
+        2: "Below average",
+        3: "What I expected",
+        4: "Pretty great",
+        5: "Perfect",
+      },
+      Length: {
+        1: "Runs short",
+        2: "Runs slightly short",
+        3: "Perfect",
+        4: "Runs slightly long",
+        5: "Runs long",
+      },
+      Fit: {
+        1: "Runs tight",
+        2: "Runs slightly tight",
+        3: "Perfect",
+        4: "Runs slightly long",
+        5: "Runs long",
+      },
+    };
+    let changeSelection = () => {
+      return new Promise(function (resolve, reject) {
+        that.setState({[name]: newValue}, function (error, result) {
+          if (error) {
+            reject(error);
+          } else {
+            resolve (result);
+          }
+        });
+      });
+    };
+    changeSelection()
+      .then(function(result) {
+        that.renderSelected(name, characteristicOptions[name]);
+      })
+      .catch(function(error) {
+        console.log('Change Selection Error:', error);
+      })
+  }
+  renderSelected(char, charObj) {
+    if (this.state[char] === 0) {
+      return (
+        <span style={{color: 'red', fontSize: 'small'}}>none selected</span>
+      )
+    } else {
+      return (
+        <span style={{color: 'blue', fontSize: 'small'}}>{charObj[this.state[char]]}</span>
+      )
+    }
+
   }
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
