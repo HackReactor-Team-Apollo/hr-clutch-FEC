@@ -1,0 +1,329 @@
+/*###########################~~QUESTION AND ANSWERS~~################################*/
+
+.QABodyWrapper {
+  background-color: rgb(36, 41, 46) !important);
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+/*##### Header #####*/
+.QAAnsHeader {
+  background-color: rgb(36, 41, 46) !important;
+  flex: 1;
+  margin: 10px;
+}
+
+.QASearchForm {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  min-width: 100px;
+}
+.QASearchField {
+  border: 1px solid grey;
+  height: 30px;
+  width: 100%;
+  padding: 2px 23px 2px 30px;
+  outline: 0;
+  background-color: #f5f5f5;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 18px;
+}
+.QASearchButton {
+  position: absolute;
+  top: 7px;
+  left: 3px;
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-left: 0px;
+}
+.QASearchButton img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+.QASearchClear {
+  background: transparent;
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  width: 15px;
+  margin-right: 5px;
+  border: none;
+  cursor: pointer;
+}
+.QASearchClear img {
+  width: 10px;
+  height: 10px;
+  object-fit: cover;
+}
+
+/*##### QuestionAnswer Wrapper #####*/
+
+.QAElementWrapper {
+  background-color: rgb(36, 41, 46) !important;
+  display: flex;
+  flex-direction: column;
+  margin: 2px;
+  margin-top: 5px;
+}
+.QuesElementWrapper {
+  background-color: rgb(36, 41, 46) !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.AnsElementWrapper {
+  background-color: rgb(36, 41, 46) !important;
+  margin: 2px;
+  display: flex;
+  flex-direction: column;
+}
+
+/*##### Question Element #####*/
+.QuestionText {
+  background-color: rgb(36, 41, 46) !important;
+  flex: 1;
+  margin: 10px;
+  font-size: 20px;
+}
+.QuestionUsernameText {
+  background-color: rgb(36, 41, 46) !important;
+  flex: 1;
+  margin: 10px;
+  font-size: 22px;
+  font-weight: bold;
+}
+.QAQHRWrapper {
+  background-color: rgb(36, 41, 46) !important;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  justify-content: stretch;
+}
+
+.QAQHelpful {
+  background-color: rgb(36, 41, 46) !important;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 2;
+  margin-top: 10px;
+  font-size: 14px;
+  max-width: 110px;
+  min-width: 95px;
+}
+.QAQHelpfulTxt {
+  color: rgb(7, 176, 255);
+  text-decoration: underline;
+  margin-left: 2px;
+  margin-right: 1px;
+  cursor: grab;
+}
+.QAQReport {
+  color: rgb(7, 176, 255);
+  text-decoration: underline;
+  background-color: rgb(36, 41, 46) !important;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex: 2;
+  margin-top: 10px;
+  font-size: 14px;
+  max-width: 110px;
+  min-width: 110px;
+  cursor: grab;
+}
+/*##### Answer Element #####*/
+.AnswerUsernameText {
+  background-color: rgb(36, 41, 46) !important;
+  flex: 1;
+  margin: 10px;
+  margin-left: 50px;
+  font-weight: Bold;
+  font-size: 16px;
+}
+.AnswerBodyText {
+  background-color: rgb(36, 41, 46) !important;
+  flex: 1;
+  margin: 10px;
+  margin-left: 50px;
+  font-size: 16px;
+}
+.answerHeaderWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+}
+.answerDate {
+  margin-right: 10px;
+}
+.QAAHRWrapper {
+  background-color: rgb(36, 41, 46) !important;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  margin-left: 50px;
+  margin-right: 10px;
+  justify-content: stretch;
+}
+
+.QAAHelpful {
+  background-color: rgb(36, 41, 46) !important;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 2;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 10px;
+  max-width: 80px;
+  min-width: 80px;
+}
+.QAAHelpfulTxt {
+  color: rgb(7, 176, 255);
+  text-decoration: underline;
+  margin-left: 2px;
+  margin-right: 1px;
+  cursor: grab;
+}
+.QAAReport {
+  color: rgb(7, 176, 255);
+  text-decoration: underline;
+  background-color: rgb(36, 41, 46) !important;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex: 2;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 10px;
+  max-width: 80px;
+  min-width: 80px;
+  cursor: grab;
+}
+.addAnswerButton {
+  border: none;
+  font-size: 14;
+  margin-left: 40px;
+  background-color: white;
+}
+.addAnswerButton:hover {
+  color: blue;
+}
+
+/*##### Footer #####*/
+
+.QALoadAndAddWrapper {
+  background-color: rgb(36, 41, 46) !important;
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.QALoadMore {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid grey;
+  margin: 10px;
+  flex: 1;
+  text-align: center;
+  max-width: 140px;
+}
+
+.QAAddQuestion {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid grey;
+  margin: 10px;
+  flex: 1;
+  text-align: center;
+  max-width: 140px;
+}
+
+/*##### Modal Wrapper #####*/
+.QAModalBtn {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid grey;
+  margin: 10px;
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+  max-width: 140px;
+  width: 65%;
+  margin-right: 5%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  max-height: 55px;
+  min-width: 225px;
+}
+.QAModalOverlay {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 89, 255);
+  border-radius: 5px;
+  margin: 2px;
+  position: static;
+  display: flex;
+  flex-direction: column;
+}
+.QAModalHeader {
+  text-align: left;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.QAModalUsernameInputText {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 10x;
+  flex: 1;
+  text-align: center;
+  min-width: 200px;
+}
+.QAModalAnswerInputText {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 10x;
+  flex: 1;
+  text-align: center;
+  min-width: 200px;
+  min-height: 40px;
+}
+.QACloseAndSubmitBtns {
+  flex: 1;
+}
+.QAModalExit {
+  background: rgb(252, 184, 176);
+  border: 4px solid rgb(253, 0, 0);
+  cursor: pointer;
+  object-fit: fill;
+  display: flex;
+}
+.QAModalExit img {
+  height: 20px;
+  width: 20px;
+}
+.QAModalSubmit {
+  background-color: rgb(193, 248, 193);
+}
+.modal {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
