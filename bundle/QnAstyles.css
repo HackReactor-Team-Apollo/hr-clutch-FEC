@@ -105,7 +105,7 @@
   margin-bottom: 10px;
   margin-left: 10px;
   margin-right: 10px;
-  justify-content:stretch;
+  justify-content: stretch;
 }
 
 .QAQHelpful {
@@ -125,7 +125,7 @@
   text-decoration: underline;
   margin-left: 2px;
   margin-right: 1px;
-  cursor:grab;
+  cursor: grab;
 }
 .QAQReport {
   color: rgb(7, 176, 255);
@@ -139,7 +139,7 @@
   font-size: 14px;
   max-width: 110px;
   min-width: 110px;
-  cursor:grab;
+  cursor: grab;
 }
 /*##### Answer Element #####*/
 .AnswerUsernameText {
@@ -158,9 +158,9 @@
   font-size: 16px;
 }
 .answerHeaderWrapper {
-  display:flex;
-  flex-direction:row;
-  justify-content:stretch;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
 }
 .answerDate {
   margin-right: 10px;
@@ -173,7 +173,7 @@
   margin-bottom: 10px;
   margin-left: 50px;
   margin-right: 10px;
-  justify-content:stretch;
+  justify-content: stretch;
 }
 
 .QAAHelpful {
@@ -193,7 +193,7 @@
   text-decoration: underline;
   margin-left: 2px;
   margin-right: 1px;
-  cursor:grab;
+  cursor: grab;
 }
 .QAAReport {
   color: rgb(7, 176, 255);
@@ -208,10 +208,10 @@
   font-size: 10px;
   max-width: 80px;
   min-width: 80px;
-  cursor:grab;
+  cursor: grab;
 }
 .addAnswerButton {
-  border:none;
+  border: none;
   font-size: 14;
   margin-left: 40px;
   background-color: white;
@@ -268,7 +268,7 @@
   border: 1px solid rgb(0, 89, 255);
   border-radius: 5px;
   margin: 2px;
-  position:static;
+  position: static;
   display: flex;
   flex-direction: column;
 }
@@ -299,7 +299,7 @@
   min-height: 40px;
 }
 .QACloseAndSubmitBtns {
-  flex:1
+  flex: 1;
 }
 .QAModalExit {
   background: rgb(252, 184, 176);

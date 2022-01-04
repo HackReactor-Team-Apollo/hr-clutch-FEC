@@ -18,6 +18,34 @@
   justify-content: space-between;
 }
 
+.searchWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  min-width: 100px;
+}
+
+.searchMain {
+  border-bottom: 2px solid rgb(255, 255, 255);
+  height: 30px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: white;
+  width: 100%;
+  padding: 2px 23px 2px 30px;
+  outline: 0;
+  background-color: #000000;
+  margin-left: 1px;
+  margin-right: 1px;
+  font-size: 18px;
+}
+
+.fa-search {
+  color: white;
+  height: 30px;
+}
+
 /*###########################~~BANNER~~################################*/
 .banner {
   background-color: rgb(255, 255, 255);

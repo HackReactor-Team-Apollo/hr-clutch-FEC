@@ -66,7 +66,7 @@ componentDidUpdate(prevProps) {
       }
     })
     .then(function(response) {
-      console.log('RESPONSE DATA: ', response.data)
+      // console.log('RESPONSE DATA: ', response.data)
       that.setState({
         productInfo: response.data,
         currentStylePhotos: response.data[0].style_photos,
@@ -119,7 +119,6 @@ render() {
   let productSize = this.state.currentSize;
   let productSizeString = null;
   let removeCents = this.state.productInfo[0].style_specs.original_price.length -3;
-  // let removeCents = priceIndexes -2
 
 
   if (typeof productSize === "number") {

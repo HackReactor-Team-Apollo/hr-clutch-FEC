@@ -46,7 +46,7 @@ class App extends React.Component {
         }
       })
       .then(function(response) {
-        console.log('RESPONSE DATA: ', response.data)
+        // console.log('RESPONSE DATA: ', response.data)
         that.setState({
           productCatInfo: response.data
         })
@@ -62,7 +62,21 @@ class App extends React.Component {
     return (
       <div id='App' className='App'>
         <div className='container'>
-          <div className='header'> <img src="https://see.fontimg.com/api/renderfont4/3z8d8/eyJyIjoiZnMiLCJoIjo0NywidyI6MTAwMCwiZnMiOjQ3LCJmZ2MiOiIjRkFGOEY4IiwiYmdjIjoiIzBFMDAwMCIsInQiOjF9/Q2x1dGNo/rooster-personal-use.png" alt="Cursive fonts"></img> </div>
+          <div className='header'> <img src="https://see.fontimg.com/api/renderfont4/3z8d8/eyJyIjoiZnMiLCJoIjo0NywidyI6MTAwMCwiZnMiOjQ3LCJmZ2MiOiIjRkFGOEY4IiwiYmdjIjoiIzBFMDAwMCIsInQiOjF9/Q2x1dGNo/rooster-personal-use.png" alt="Cursive fonts"></img>
+
+
+          <div className='searchWrapper'>
+          <button className='QASearchButton' type='submit'>
+
+          </button>
+          <input type='text' className='searchMain' />
+
+          <button className='QASearchClear' type='reset'>
+          </button>
+            <i class="fas fa-search"></i>
+        </div>
+
+          </div>
           <div className='banner'>
           <marquee style={{ color: 'red', fontSize: '1em' }}>  <strong>Members only sale</strong><i> - Sign up now to receive exclusive deals!</i>  </marquee>
             </div>
