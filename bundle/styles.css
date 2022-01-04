@@ -222,7 +222,7 @@
   position: relative;
   transition: 0.3s;
   width: 100%;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   margin: 10px;
   flex: 2 0 21%;
   max-width: 160px;
@@ -271,9 +271,9 @@
   width: 150px;
   height: 150px;
   padding: 10px;
+  color: black;
   background: white;
-  border: 1px solid #ccc;
-  color: #000;
+  /* border: 1px solid #ccc; */
   text-align: center;
   font: 30px Arial, sans-serif;
   max-width: 150px;
@@ -281,6 +281,10 @@
   display: inline-block;
   padding: 50px 0 50px;
   cursor: pointer;
+}
+.circle:hover {
+  color: white;
+  background: black;
 }
 
 .comparison {
@@ -297,6 +301,7 @@
   padding: 2%;
   z-index:3;
   font-size: 14px;
+  text-align: center;
 }
 .centerTable {
   margin-left: auto;
@@ -392,6 +397,10 @@ h2:after {
   max-width: 150px;
   width: 65%;
   left: 50%;
+}
+
+.smaller{
+  font-size: 10px;
 }
 
 /*###########################~~RATINGS AND REVIEWS~~################################*/

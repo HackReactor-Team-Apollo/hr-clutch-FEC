@@ -41,10 +41,10 @@ export default function Card({ current, onRelatedProductClick, Action, changeAct
       <img onClick={() => onRelatedProductClick(current)} src={styles.photos[0].thumbnail_url || 'https://www.escapeauthority.com/wp-content/uploads/2116/11/No-image-found.jpg'} style={{ height: "175px", width: '100%' }} />
       <Action changeAction={changeAction} product={product} />
       <div className="card-body" onClick={() => onRelatedProductClick(current)}>
-        <div className="small">{product.category}</div>
+        <div className="smaller">{product.category.toUpperCase()}</div>
         <div className="small"><strong>{product.name}</strong></div>
-        {!styles.sale_price && <p>{styles.original_price}</p>}
-        {styles.sale_price && <p style={{ color: 'red' }}>{styles.sale_price}<s style={{ color: 'black' }}>{styles.original_price}</s></p>}
+        {!styles.sale_price && <p className="small">${styles.original_price}</p>}
+        {styles.sale_price && <p className="small" style={{ color: 'red' }}>${styles.sale_price}<s className="small" style={{ color: 'black' }}>{styles.original_price}</s></p>}
         <StarRating currentRating={starRating} leftPercentage={leftPercentage} rightPercentage={rightPercentage}
         />
       </div>
