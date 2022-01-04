@@ -15,16 +15,17 @@ class ReviewTile extends React.Component {
     this.state = {
       review_id: this.props.review.review_id,
       marked: false,
-      showingAll: false
+      showingAll: false,
+      helpfulness: this.props.review.helpfulness
     };
     this.renderOverallRating = this.renderOverallRating.bind(this);
     this.showMore = this.showMore.bind(this);
     this.showAllBody = this.showAllBody.bind(this);
+    this.renderHelpfulness = this.renderHelpfulness.bind(this);
   }
   convertTime(milliseconds) {
-    console.log(this.props.review.date.slice(0, 10))
     let date = new Date(milliseconds);
-    console.log(date);
+
     let modifiedDate = date.toString().split(" ");
     modifiedDate.shift();
     modifiedDate.splice(2, 0, ", ");
@@ -51,11 +52,11 @@ class ReviewTile extends React.Component {
   markHelpful() {
     let that = this;
     if (this.state.marked === false) {
-      axios.put("/reviews/:reviewId/helpful", {review_id: this.state.review_id})
+      axios.put("/reviews/:reviewId/helpful", {review_id: this.props.review.review_id})
         .then(function(response) {
           //console.log('this worked:', response);
-          that.setState({marked: true})
-          that.props.getRevs();
+          that.setState({marked: true, helpfulness: that.state.helpfulness + 1})
+          // that.props.getRevs();
         })
         .catch(function(error) {
           console.log('PUT Error:', error);
@@ -114,6 +115,13 @@ class ReviewTile extends React.Component {
     }
 
   }
+  renderHelpfulness() {
+    if (this.state.helpfulness !== undefined) {
+
+      return (<div onClick={this.markHelpful.bind(this)} name={this.props.review} className="helpfulReview">Yes({this.props.review.helpfulness})</div>)
+    }
+  }
+
   render() {
     return (
       <>
@@ -127,7 +135,7 @@ class ReviewTile extends React.Component {
           {this.showMore()}
           {this.isRecommended(this.props.review)}
           <div className="helpfuldiv"><span className="helpfulspan">Helpful?</span>
-          <div onClick={this.markHelpful.bind(this)} className="helpfulReview">Yes({this.props.review.helpfulness})</div>
+          {this.renderHelpfulness()}
           </div>
           <div onClick={this.reportReview.bind(this)} className="reportReview">Report</div>
           {this.showResponse(this.props.review)}

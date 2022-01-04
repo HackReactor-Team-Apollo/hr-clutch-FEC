@@ -57,7 +57,7 @@ const ProductProgressbar = ({bgcolor,progress,height}) => {
 
         <div style={Childdiv}>
 
-          <span style={progresstext}>&#9830;</span>
+          <span className="diamond" style={progresstext}>&#9830;</span>
 
         </div>
 

@@ -44,6 +44,7 @@ class RatingsAndReviews extends React.Component {
     this.filterReviews = this.filterReviews.bind(this);
     this.showFilters = this.showFilters.bind(this);
     this.triggerRemoval = this.triggerRemoval.bind(this);
+    this.renderModal = this.renderModal.bind(this);
   }
   getCurrentProductInfo() {
     let that = this;
@@ -215,6 +216,7 @@ class RatingsAndReviews extends React.Component {
       this.getMetadata();
       this.getReviews();
       this.getCurrentProductInfo();
+      this.renderModal();
     }
   }
   filterReviews(reviewArray) {
@@ -293,7 +295,18 @@ class RatingsAndReviews extends React.Component {
   showModal() {
     this.setState({ show: true });
   }
-
+  renderModal() {
+    return (
+      <Modal product_id={this.state.product_id} show={this.state.show} handleClose={this.hideModal}>
+              <h2>Write Your Review</h2>
+              <div>About the <span style={{ textDecoration: 'underline' }}>{this.state.currentProductInfo.name}</span></div>
+              <ReviewModalForm
+                characteristics={this.state.characteristics}
+                product_id={this.props.product_id}
+              />
+      </Modal>
+    )
+  }
   hideModal() {
     this.setState({ show: false });
   }
@@ -335,14 +348,7 @@ class RatingsAndReviews extends React.Component {
           </div>
           <div className="reviewlistbuttons">
             <MoreReviewsButton onClick={this.onMoreReviewsClick} />
-            <Modal show={this.state.show} handleClose={this.hideModal}>
-              <h2>Write Your Review</h2>
-              <div>About the <span style={{ textDecoration: 'underline' }}>{this.state.currentProductInfo.name}</span></div>
-              <ReviewModalForm
-                characteristics={this.state.characteristics}
-                product_id={this.state.product_id}
-              />
-            </Modal>
+            {this.renderModal()}
             <button className="ReviewsButtons" onClick={this.showModal}>
               Add A Review &#43;
             </button>

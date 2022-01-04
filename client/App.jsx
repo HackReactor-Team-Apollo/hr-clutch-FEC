@@ -73,7 +73,7 @@ class App extends React.Component {
 
           <button className='QASearchClear' type='reset'>
           </button>
-            <i class="fas fa-search"></i>
+            <i className="fas fa-search"></i>
         </div>
 
           </div>

@@ -55,8 +55,8 @@ componentDidMount() {
 }
 
 
-componentDidUpdate(prevProps) {
-  if (this.props.product_id !== prevProps.product_id) {
+componentDidUpdate(prevProps, prevState) {
+  if (this.props.product_id !== prevProps.product_id || prevProps.productStyleID !== this.props.productStyleID) {
     let productID = this.props.product_id;
     let that = this;
     //get styles
@@ -66,19 +66,51 @@ componentDidUpdate(prevProps) {
       }
     })
     .then(function(response) {
-      // console.log('RESPONSE DATA: ', response.data)
+      // console.log('RESPONSE DATA: ', response.data);
       that.setState({
         productInfo: response.data,
         currentStylePhotos: response.data[0].style_photos,
         currentStyle: response.data[0],
         styleSkus: getSkuInfo(response.data)
       })
+      console.log('this.state.productInfo; ', that.state.productInfo)
+      that.state.productInfo.forEach(style => {
+        console.log("STYLEEEEEEE: ", style)
+        if (that.props.productStyleID === style.style_id){
+          that.setState({
+            currentStylePhotos: style.style_photos,
+            currentStyle: style,
+            // styleSkus: getSkuInfo(style)
+          })
+        }
+      }
+      )
     })
+    // .then(
+    //   axios.get(`/reviews/meta?product_id=${this.props.product_id}`)
+    //   .then(function (response) {
+    //     that.setState({
+    //       leftPercentage: response.data.ratings.avg * 20,
+    //       rightPercentage: 100 - response.data.ratings.avg * 20,
+    //     });
+    //   })
+    // )
+    // .then(
+    //   this.state.productInfo.forEach(style => {
+    //     console.log("STYLEEEEEEE: ", style)
+    //     if (this.props.productStyleID === style.style_id){
+    //       that.setState({
+    //         currentStylePhotos: style.style_photos,
+    //         currentStyle: style,
+    //         // styleSkus: getSkuInfo(style)
+    //       })
+    //     }
+    //   }
+    //   ))
     .catch(function(error) {
       console.log('ERROR FROM GET STYLES: ', error)
     })
-  }
-}
+}}
 
 
   handleChange(event) {
@@ -168,12 +200,12 @@ return (
       <StarRating leftPercentage={this.state.leftPercentage} rightPercentage={this.state.rightPercentage}/>
       </div>
       <div className="overviewNameAndCat">
-        <h5>{productCategory}</h5>
+        <h5>{productCategory.toUpperCase()}</h5>
         <h1><strong>{productName}</strong></h1>
       </div>
       <div className="price">${this.state.productInfo[0].style_specs.original_price.slice(0, removeCents)}</div>
       <div className="overviewStyle">
-        <div><strong>STYLE >  </strong> {this.state.currentStyle.style_specs.name}</div>
+        <div><strong>STYLE >  </strong> {this.state.currentStyle.style_specs.name.toUpperCase()}</div>
       <div>{styleThumbnailCircles}</div>
       </div>
       <div className="overviewSizeSelector">
