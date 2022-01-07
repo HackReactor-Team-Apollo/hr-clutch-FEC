@@ -13,7 +13,7 @@ class QuestionsAndAnswersHeader extends React.Component {
     return (
       <div>
 
-      <h2> Questions and Answers </h2>
+      <h2 > Questions and Answers </h2>
       <div className='QAAnsHeader'>
         <div className='QASearchForm'>
           <input type='text' onChange={this.props.onSearchChange} value={this.props.query} placeholder='Have a question?  Search for answers...' className='QASearchField' />

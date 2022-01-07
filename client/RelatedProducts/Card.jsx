@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import StarRating from './StarRatings.jsx';
+import logo from '../../bundle/ClutchLogo.png'
 
 
 export default function Card({ current, onRelatedProductClick, Action, changeAction }) {
@@ -38,7 +39,7 @@ export default function Card({ current, onRelatedProductClick, Action, changeAct
 
   return (
     <div className="card">
-      <img onClick={() => onRelatedProductClick(current)} src={styles.photos[0].thumbnail_url || 'https://www.escapeauthority.com/wp-content/uploads/2116/11/No-image-found.jpg'} style={{ height: "175px", width: '100%' }} />
+      <img onClick={() => onRelatedProductClick(current)} src={styles.photos[0].thumbnail_url || logo} style={{ height: "175px", width: '100%' }} />
       <Action changeAction={changeAction} product={product} />
       <div className="card-body" onClick={() => onRelatedProductClick(current)}>
         <div className="smaller">{product.category.toUpperCase()}</div>

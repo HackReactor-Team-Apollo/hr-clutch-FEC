@@ -83,7 +83,6 @@ class App extends React.Component {
           <div className='wrapper'>
             <ProductDetails product_id={this.state.product_id} productStyleID={this.state.product_styleID} onStyleThumbnailClick={this.onStyleThumbnailClick} productCatInfo={this.state.productCatInfo}/>
             <RelatedProducts product_id={this.state.product_id} onRelatedProductClick={this.onRelatedProductClick}/>
-            <h2 className='QAHeader'> Questions and Answers </h2>
             <QuestionsAndAnswers product_id={this.state.product_id} />
             <RatingsAndReviews
               product_id={this.state.product_id}
