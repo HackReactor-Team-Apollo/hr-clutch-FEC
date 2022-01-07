@@ -7,6 +7,8 @@ import $ from 'jquery'
 import axios from 'axios'
 import {StarRating} from './starRatingBar.jsx'
 import {FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, PinterestShareButton, PinterestIcon, TumblrShareButton, TumblrIcon, EmailShareButton, EmailIcon} from 'react-share';
+import logoThumb from './ClutchLogo.png';
+import logoOriginal from './ClutchLogoOriginal.png';
 
 
 
@@ -71,22 +73,39 @@ componentDidMount() {
           }
         })
         .then(function (response) {
-          // console.log('RESPONSE DATA: ', response.data);
-          that.setState({
-            productInfo: response.data,
-            currentStylePhotos: response.data[0].style_photos,
-            currentStyle: response.data[0],
-            styleSkus: getSkuInfo(response.data)
-          })
-      console.log('this.state.productInfo; ', that.state.productInfo)
+          console.log('response.data[0].style_photos.original: ', response.data[0].style_photos.original);
+          if (response.data[0].style_photos.original === undefined) {
+            that.setState({
+              productInfo: response.data,
+              currentStylePhotos: [{original: logoOriginal, thumbnail: logoThumb}],
+              currentStyle: response.data[0],
+              styleSkus: getSkuInfo(response.data)
+            })
+          } else {
+            that.setState({
+              productInfo: response.data,
+              currentStylePhotos: response.data[0].style_photos,
+              currentStyle: response.data[0],
+              styleSkus: getSkuInfo(response.data)
+            })
+          }
+      // console.log('this.state.productInfo; ', that.state.productInfo)
       that.state.productInfo.forEach(style => {
-        // console.log("STYLEEEEEEE SKUS: ", style.style_skus)
+        console.log("style.style_photos.original: ", style.style_photos.original)
         if (that.props.productStyleID === style.style_id){
-          that.setState({
-            currentStylePhotos: style.style_photos,
-            currentStyle: style,
-            styleSkus: getStyleInfo(style.style_skus)
-          })
+          if (style.style_photos.original === undefined) {
+            that.setState({
+              currentStylePhotos: [{original: logoOriginal, thumbnail: logoThumb}],
+              currentStyle: style,
+              styleSkus: getStyleInfo(style.style_skus)
+            })
+          } else {
+            that.setState({
+              currentStylePhotos: style.style_photos,
+              currentStyle: style,
+              styleSkus: getStyleInfo(style.style_skus)
+            })
+          }
         }
       }
       )
