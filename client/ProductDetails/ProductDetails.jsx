@@ -73,39 +73,39 @@ componentDidMount() {
           }
         })
         .then(function (response) {
-          console.log('response.data[0].style_photos.original: ', response.data[0].style_photos.original);
-          if (response.data[0].style_photos.original === undefined) {
-            that.setState({
-              productInfo: response.data,
-              currentStylePhotos: [{original: logoOriginal, thumbnail: logoThumb}],
-              currentStyle: response.data[0],
-              styleSkus: getSkuInfo(response.data)
-            })
-          } else {
+          // console.log('response.data[0].style_photos.original: ', response.data[0].style_photos.original);
+          // if (response.data[0].style_photos.original === undefined) {
+          //   that.setState({
+          //     productInfo: response.data,
+          //     currentStylePhotos: [{original: logoOriginal, thumbnail: logoThumb}],
+          //     currentStyle: response.data[0],
+          //     styleSkus: getSkuInfo(response.data)
+          //   })
+          // } else {
             that.setState({
               productInfo: response.data,
               currentStylePhotos: response.data[0].style_photos,
               currentStyle: response.data[0],
               styleSkus: getSkuInfo(response.data)
             })
-          }
+          // }
       // console.log('this.state.productInfo; ', that.state.productInfo)
       that.state.productInfo.forEach(style => {
-        console.log("style.style_photos.original: ", style.style_photos.original)
+        // console.log("style.style_photos.original: ", style.style_photos.original)
         if (that.props.productStyleID === style.style_id){
-          if (style.style_photos.original === undefined) {
-            that.setState({
-              currentStylePhotos: [{original: logoOriginal, thumbnail: logoThumb}],
-              currentStyle: style,
-              styleSkus: getStyleInfo(style.style_skus)
-            })
-          } else {
+          // if (style.style_photos.original === undefined) {
+          //   that.setState({
+          //     currentStylePhotos: [{original: logoOriginal, thumbnail: logoThumb}],
+          //     currentStyle: style,
+          //     styleSkus: getStyleInfo(style.style_skus)
+          //   })
+          // } else {
             that.setState({
               currentStylePhotos: style.style_photos,
               currentStyle: style,
               styleSkus: getStyleInfo(style.style_skus)
             })
-          }
+          // }
         }
       }
       )
@@ -173,8 +173,9 @@ render() {
     }
 
     //listing functions//
-    let styleThumbnailCircles = styleThumbnails.map(style => {
-      let ID = style.style_id
+    let styleThumbnailCircles = styleThumbnails.map((style, i) => {
+      let ID = style.style_id;
+      console.log('INDEX: ', i);
       return (
         <img
           key={ID}
