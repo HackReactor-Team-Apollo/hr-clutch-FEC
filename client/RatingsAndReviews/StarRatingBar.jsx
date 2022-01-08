@@ -14,7 +14,7 @@ class StarRating extends React.Component {
       WebkitTextFillColor: "transparent",
     };
     return (
-      <div>
+      <div className="starRatingDiv">
         <>
           <span className="starratedspan" style={style}>
             &#9733;&#9733;&#9733;&#9733;&#9733;
