@@ -60,7 +60,8 @@ class ProductBreakdown extends React.Component {
         <br></br>
         <ProductProgressbar bgcolor="orange" progress={((characteristicsObj[characteristicKey].value) / 5) * 100} />
         <br></br>
-        <span className="productbreakdown" id="first">{characteristicOptions[characteristicKey]['1']}</span><span className="productbreakdown" id="second">{characteristicOptions[characteristicKey]['3']}</span><span className="productbreakdown" id="third">{characteristicOptions[characteristicKey]['5']}</span>
+       <div className="firsttothird"><span className="productbreakdown" id="first">{characteristicOptions[characteristicKey]['1']}</span><span className="productbreakdown" id="second">{characteristicOptions[characteristicKey]['3']}</span><span className="productbreakdown" id="third">{characteristicOptions[characteristicKey]['5']}</span>
+       </div>
         <br></br>
       </div>
     ));
