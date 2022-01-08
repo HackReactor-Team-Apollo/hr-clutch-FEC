@@ -11,6 +11,7 @@
 ### General Info
 Clutch is a fashion-retail, e-Commerce website that delivers high-end streetwear to consumers in a user-friendly way. 
 
+
 ### ✨ Demo
 
 
@@ -31,6 +32,7 @@ Clutch is a fashion-retail, e-Commerce website that delivers high-end streetwear
 * React-share: 4.4.0,
 * Underscore: 1.13.2,
 * Watch: 0.13.0
+
 
 ### 🚀 Installation and Setup
 ```
