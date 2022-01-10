@@ -52,6 +52,6 @@ Set up a config.js with the following:
 
 ### 🤝 Contributors
 - [Haydenn Harper](https://www.linkedin.com/in/haydenn-harper)
-- [Kacy Holm](https://www.linkedin.com/in/kacy-holm-732432221/)
+- [Kacy Holm](https://www.linkedin.com/in/kacy-holm)
 - [Ian McGahren](https://www.linkedin.com/in/imcgahren/)
 - [Winston Pantelakos](https://www.linkedin.com/in/winston-pantelakos/)
