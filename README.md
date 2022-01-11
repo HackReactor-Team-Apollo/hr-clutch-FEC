@@ -15,6 +15,8 @@ Clutch is a fashion-retail, e-Commerce website that delivers high-end streetwear
 ### ✨ Demo
 
 
+#### Rating & Reviews
+![ratingsandreviews](https://user-images.githubusercontent.com/91493090/149037692-0c07664a-3dd5-47d0-b0c9-e65b918d7291.gif)
 
 
 ### 🧪 Technologies
