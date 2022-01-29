@@ -18,6 +18,11 @@ Clutch is a fashion-retail, e-Commerce website that delivers high-end streetwear
 #### Rating & Reviews
 ![ratingsandreviews](https://user-images.githubusercontent.com/91493090/149037692-0c07664a-3dd5-47d0-b0c9-e65b918d7291.gif)
 
+The Ratings & Reviews section allows the user to see reviews and ratings submitted by previous users as well as submit reviews of their own.
+
+* Users can sort by helpfulness, ratings, newness and relevance.
+* Users can see dynamically rendered ratings and characteristics of specific products, including photos.
+* Users can infinitely scroll all the reviews.
 
 ### 🧪 Technologies
 * Axios: 0.24.0,
